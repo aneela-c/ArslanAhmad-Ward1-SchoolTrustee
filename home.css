@@ -270,3 +270,6 @@
   .quick-priorities { grid-template-columns: 1fr; }
   .quick-priorities a { border-right: 0; border-bottom: 2px solid rgba(255,255,255,.35); }
 }
+
+/* GitHub Pages refresh marker: 2026-08-19.
+   Keep this page-specific stylesheet linked after styles.css. */

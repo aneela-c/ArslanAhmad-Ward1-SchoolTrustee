@@ -1,4 +1,8 @@
 .candidate-page { background: var(--white); }
+
+/* =========================
+   MISSION HERO
+   ========================= */
 .candidate-hero {
   position: relative;
   display: grid;
@@ -9,6 +13,7 @@
   color: var(--white);
   overflow: hidden;
 }
+
 .candidate-hero::after {
   content: '';
   position: absolute;
@@ -19,6 +24,7 @@
   border: 28px solid rgba(255,255,255,.16);
   transform: rotate(45deg);
 }
+
 .hero-label {
   grid-column: 1 / -1;
   width: max-content;
@@ -30,6 +36,7 @@
   font-weight: 900;
   letter-spacing: .12em;
 }
+
 .candidate-hero h1 {
   margin: 0;
   font-size: clamp(66px, 8vw, 126px);
@@ -37,7 +44,9 @@
   font-weight: 900;
   letter-spacing: .01em;
 }
+
 .candidate-hero h1 span { color: var(--navy); }
+
 .candidate-hero aside {
   align-self: end;
   position: relative;
@@ -48,10 +57,32 @@
   border-left: 12px solid var(--navy);
   box-shadow: var(--shadow);
 }
-.candidate-hero aside p { margin: 0; font-size: 17px; line-height: 1.68; color: #3e4d62; }
 
-.agenda-section { padding: 78px max(7vw, 42px) 88px; }
-.section-heading { max-width: 760px; }
+.candidate-hero aside p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.68;
+  color: #3e4d62;
+}
+
+/* =========================
+   AGENDA / FOUR PRIORITIES
+   Inspired by the four-card reference, while keeping
+   the campaign's navy, red and bold condensed type.
+   ========================= */
+.agenda-section {
+  padding: 82px max(5vw, 34px) 92px;
+  background:
+    linear-gradient(135deg, rgba(6,27,58,.025) 25%, transparent 25%) 0 0/54px 54px,
+    var(--white);
+}
+
+.section-heading {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .section-heading h2 {
   margin: 0;
   color: var(--navy);
@@ -59,44 +90,120 @@
   line-height: .84;
   font-weight: 900;
 }
+
 .section-heading h2 span { color: var(--red); }
 
-.agenda-grid { list-style: none; margin: 48px 0 0; padding: 0; display: grid; gap: 18px; }
-.agenda-grid li {
+.agenda-grid {
+  list-style: none;
+  width: min(1480px, 100%);
+  margin: 54px auto 0;
+  padding: 0;
   display: grid;
-  grid-template-columns: 120px minmax(0, 1fr);
-  gap: 28px;
-  padding: 34px 38px;
-  background: var(--navy);
-  color: var(--white);
-  border-left: 16px solid var(--red);
-  box-shadow: 0 12px 30px rgba(3,19,41,.08);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
 }
-.agenda-grid li:nth-child(even) { background: var(--red); border-left-color: var(--navy); }
-.priority-number {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 76px;
-  line-height: .85;
-  font-weight: 900;
-  opacity: .45;
-}
-.agenda-grid h3 {
-  margin: 0 0 10px;
-  font-size: clamp(32px, 3vw, 46px);
-  line-height: 1;
-  font-weight: 900;
-}
-.agenda-grid p { margin: 0; max-width: 1020px; color: #edf3fb; font-size: 17px; line-height: 1.7; }
 
+.agenda-grid li {
+  position: relative;
+  min-width: 0;
+  min-height: 610px;
+  padding: 102px 27px 34px;
+  background: var(--off-white);
+  color: var(--navy);
+  border: 3px solid var(--navy);
+  border-top: 16px solid var(--red);
+  box-shadow: 10px 12px 0 rgba(6,27,58,.08);
+  overflow: hidden;
+}
+
+/* Alternate the top campaign colour without making the body hard to read. */
+.agenda-grid li:nth-child(even) {
+  border-color: var(--red);
+  border-top-color: var(--navy);
+  box-shadow: 10px 12px 0 rgba(198,31,59,.10);
+}
+
+/* Large numbers replace the quote marks from the reference image. */
+.priority-number {
+  position: absolute;
+  top: 21px;
+  right: 25px;
+  color: var(--red);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 72px;
+  line-height: .78;
+  font-weight: 900;
+  letter-spacing: -.04em;
+}
+
+.agenda-grid li:nth-child(even) .priority-number { color: var(--navy); }
+
+.agenda-grid li > div {
+  position: relative;
+  z-index: 1;
+}
+
+.agenda-grid h3 {
+  position: relative;
+  display: inline;
+  margin: 0;
+  color: var(--navy);
+  font-size: clamp(29px, 2.4vw, 39px);
+  line-height: .98;
+  font-weight: 900;
+  letter-spacing: .005em;
+  background: linear-gradient(transparent 67%, var(--red-soft) 67%);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.agenda-grid li:nth-child(even) h3 {
+  background: linear-gradient(transparent 67%, rgba(198,31,59,.18) 67%);
+}
+
+.agenda-grid p {
+  margin: 28px 0 0;
+  color: #33465d;
+  font-size: 16px;
+  line-height: 1.66;
+}
+
+/* Small campaign block in the lower corner keeps the cards bold, not corporate. */
+.agenda-grid li::after {
+  content: '';
+  position: absolute;
+  width: 58px;
+  height: 58px;
+  right: -29px;
+  bottom: -29px;
+  background: var(--red);
+  transform: rotate(45deg);
+}
+
+.agenda-grid li:nth-child(even)::after { background: var(--navy); }
+
+/* =========================
+   CANDIDATE VALUES
+   ========================= */
 .values-section {
   padding: 80px max(7vw, 42px) 96px;
   background: var(--navy);
   color: var(--white);
   border-top: 18px solid var(--red);
 }
+
+.section-heading.light { text-align: left; margin: 0; }
 .section-heading.light h2 { color: var(--white); }
 .section-heading.light .eyebrow { color: var(--red-soft); }
-.candidate-values-list { margin-top: 48px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+
+.candidate-values-list {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
 .candidate-values-list article {
   position: relative;
   padding: 34px 34px 32px;
@@ -104,7 +211,9 @@
   color: var(--navy);
   border-top: 10px solid var(--red);
 }
+
 .candidate-values-list article:last-child { grid-column: 1 / -1; }
+
 .candidate-values-list span {
   position: absolute;
   top: 22px;
@@ -116,25 +225,76 @@
   font-weight: 900;
   opacity: .23;
 }
+
 .candidate-values-list h3 {
   margin: 0 60px 12px 0;
   font-size: 33px;
   line-height: 1;
   font-weight: 900;
 }
-.candidate-values-list p { margin: 0; color: #4c5d72; font-size: 16px; line-height: 1.7; }
+
+.candidate-values-list p {
+  margin: 0;
+  color: #4c5d72;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+@media (max-width: 1240px) {
+  .agenda-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 980px;
+  }
+
+  .agenda-grid li { min-height: 0; }
+  .agenda-grid h3 { font-size: 38px; }
+}
 
 @media (max-width: 900px) {
-  .candidate-hero { grid-template-columns: 1fr; gap: 28px; }
+  .candidate-hero {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
   .candidate-hero aside { max-width: 720px; }
-  .agenda-grid li { grid-template-columns: 85px 1fr; }
-  .priority-number { font-size: 62px; }
 }
+
 @media (max-width: 680px) {
-  .candidate-hero, .agenda-section, .values-section { padding-left: 22px; padding-right: 22px; }
+  .candidate-hero,
+  .agenda-section,
+  .values-section {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
   .candidate-hero h1 { font-size: 70px; }
-  .agenda-grid li { grid-template-columns: 1fr; gap: 12px; padding: 28px 24px; }
-  .priority-number { font-size: 48px; }
+
+  .section-heading { text-align: left; }
+  .section-heading h2 { font-size: 58px; }
+
+  .agenda-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 38px;
+  }
+
+  .agenda-grid li {
+    padding: 90px 24px 30px;
+    box-shadow: 7px 8px 0 rgba(6,27,58,.08);
+  }
+
+  .priority-number {
+    top: 20px;
+    right: 22px;
+    font-size: 62px;
+  }
+
+  .agenda-grid h3 { font-size: 35px; }
+  .agenda-grid p { font-size: 16px; }
+
   .candidate-values-list { grid-template-columns: 1fr; }
   .candidate-values-list article:last-child { grid-column: auto; }
 }

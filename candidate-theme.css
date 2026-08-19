@@ -1,14 +1,27 @@
 .agenda-closing {
-  max-width: 980px;
-  margin: 42px 0 0;
-  padding: 30px 32px;
-  border-left: 12px solid var(--red);
-  background: var(--off-white);
-  color: var(--navy);
+  width: min(1480px, 100%);
+  margin: 30px auto 0;
+  padding: 34px 38px;
+  background: var(--navy);
+  color: var(--white);
+  border-left: 14px solid var(--red);
+  box-shadow: 10px 12px 0 rgba(198,31,59,.12);
 }
-.agenda-closing p { margin: 0; font-size: 17px; line-height: 1.72; color: #46576c; }
+
+.agenda-closing p {
+  margin: 0;
+  color: #edf3fb;
+  font-size: 17px;
+  line-height: 1.72;
+}
+
 .agenda-closing p + p { margin-top: 16px; }
-@media (max-width: 560px) {
-  .agenda-closing { padding: 24px 22px; border-left-width: 8px; }
+
+@media (max-width: 680px) {
+  .agenda-closing {
+    padding: 26px 24px;
+    border-left-width: 9px;
+  }
+
   .agenda-closing p { font-size: 16px; }
 }
