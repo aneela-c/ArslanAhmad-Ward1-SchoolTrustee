@@ -1,1 +1,140 @@
-.candidate-page{background:var(--canvas)}.candidate-hero{padding:88px max(10vw,28px) 78px;display:grid;grid-template-columns:1.2fr .8fr;gap:70px;align-items:end;background:var(--white);border-bottom:1px solid var(--line)}.candidate-hero h1,.content-label h2{font:400 clamp(40px,5vw,64px)/1.04 'DM Serif Display',serif;letter-spacing:-.035em;margin:0}.candidate-hero h1 em,.content-label h2 em{font-style:italic}.candidate-hero>p{max-width:390px;margin:0 0 6px;color:var(--muted);font-size:16px}.agenda-section,.values-section{padding:86px max(10vw,28px)}.content-label{max-width:560px}.agenda-grid{list-style:none;counter-reset:agenda;margin:48px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--line)}.agenda-grid li{position:relative;padding:29px 42px 34px 0;min-height:210px;border-bottom:1px solid var(--line)}.agenda-grid li:nth-child(even){padding-left:42px;padding-right:0;border-left:1px solid var(--line)}.agenda-grid span{display:block;color:var(--accent);font-size:11px;font-weight:800;letter-spacing:.13em}.agenda-grid h3,.candidate-values-list h3{font:400 27px/1.1 'DM Serif Display',serif;letter-spacing:-.02em;margin:20px 0 11px}.agenda-grid p,.candidate-values-list p{margin:0;color:var(--muted);font-size:15px}.values-section{background:var(--sage)}.candidate-values-list{margin-top:46px;border-top:1px solid #bba8aa}.candidate-values-list article{display:grid;grid-template-columns:250px 1fr;gap:36px;padding:27px 0;border-bottom:1px solid #bba8aa}.candidate-values-list h3{margin:0;font-size:23px}.candidate-values-list p{max-width:660px}@media(max-width:800px){.candidate-hero{padding:68px 7vw;grid-template-columns:1fr;gap:25px}.agenda-section,.values-section{padding:68px 7vw}.agenda-grid{grid-template-columns:1fr}.agenda-grid li,.agenda-grid li:nth-child(even){padding:27px 0;min-height:0;border-left:0}.candidate-values-list article{grid-template-columns:1fr;gap:8px}.candidate-hero h1,.content-label h2{font-size:clamp(40px,10vw,58px)}}@media(max-width:470px){.candidate-hero,.agenda-section,.values-section{padding-left:7vw;padding-right:7vw}.agenda-grid h3{font-size:24px}}
+.candidate-page { background: var(--white); }
+.candidate-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(320px, .7fr);
+  gap: 48px;
+  padding: 74px max(7vw, 42px) 82px;
+  background: var(--red);
+  color: var(--white);
+  overflow: hidden;
+}
+.candidate-hero::after {
+  content: '';
+  position: absolute;
+  width: 390px;
+  height: 390px;
+  right: -210px;
+  top: -180px;
+  border: 28px solid rgba(255,255,255,.16);
+  transform: rotate(45deg);
+}
+.hero-label {
+  grid-column: 1 / -1;
+  width: max-content;
+  background: var(--navy);
+  color: var(--white);
+  padding: 10px 16px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: .12em;
+}
+.candidate-hero h1 {
+  margin: 0;
+  font-size: clamp(66px, 8vw, 126px);
+  line-height: .78;
+  font-weight: 900;
+  letter-spacing: .01em;
+}
+.candidate-hero h1 span { color: var(--navy); }
+.candidate-hero aside {
+  align-self: end;
+  position: relative;
+  z-index: 2;
+  background: var(--white);
+  color: var(--navy);
+  padding: 30px 32px;
+  border-left: 12px solid var(--navy);
+  box-shadow: var(--shadow);
+}
+.candidate-hero aside p { margin: 0; font-size: 17px; line-height: 1.68; color: #3e4d62; }
+
+.agenda-section { padding: 78px max(7vw, 42px) 88px; }
+.section-heading { max-width: 760px; }
+.section-heading h2 {
+  margin: 0;
+  color: var(--navy);
+  font-size: clamp(58px, 6vw, 94px);
+  line-height: .84;
+  font-weight: 900;
+}
+.section-heading h2 span { color: var(--red); }
+
+.agenda-grid { list-style: none; margin: 48px 0 0; padding: 0; display: grid; gap: 18px; }
+.agenda-grid li {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 28px;
+  padding: 34px 38px;
+  background: var(--navy);
+  color: var(--white);
+  border-left: 16px solid var(--red);
+  box-shadow: 0 12px 30px rgba(3,19,41,.08);
+}
+.agenda-grid li:nth-child(even) { background: var(--red); border-left-color: var(--navy); }
+.priority-number {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 76px;
+  line-height: .85;
+  font-weight: 900;
+  opacity: .45;
+}
+.agenda-grid h3 {
+  margin: 0 0 10px;
+  font-size: clamp(32px, 3vw, 46px);
+  line-height: 1;
+  font-weight: 900;
+}
+.agenda-grid p { margin: 0; max-width: 1020px; color: #edf3fb; font-size: 17px; line-height: 1.7; }
+
+.values-section {
+  padding: 80px max(7vw, 42px) 96px;
+  background: var(--navy);
+  color: var(--white);
+  border-top: 18px solid var(--red);
+}
+.section-heading.light h2 { color: var(--white); }
+.section-heading.light .eyebrow { color: var(--red-soft); }
+.candidate-values-list { margin-top: 48px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.candidate-values-list article {
+  position: relative;
+  padding: 34px 34px 32px;
+  background: var(--white);
+  color: var(--navy);
+  border-top: 10px solid var(--red);
+}
+.candidate-values-list article:last-child { grid-column: 1 / -1; }
+.candidate-values-list span {
+  position: absolute;
+  top: 22px;
+  right: 24px;
+  color: var(--red);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 52px;
+  line-height: 1;
+  font-weight: 900;
+  opacity: .23;
+}
+.candidate-values-list h3 {
+  margin: 0 60px 12px 0;
+  font-size: 33px;
+  line-height: 1;
+  font-weight: 900;
+}
+.candidate-values-list p { margin: 0; color: #4c5d72; font-size: 16px; line-height: 1.7; }
+
+@media (max-width: 900px) {
+  .candidate-hero { grid-template-columns: 1fr; gap: 28px; }
+  .candidate-hero aside { max-width: 720px; }
+  .agenda-grid li { grid-template-columns: 85px 1fr; }
+  .priority-number { font-size: 62px; }
+}
+@media (max-width: 680px) {
+  .candidate-hero, .agenda-section, .values-section { padding-left: 22px; padding-right: 22px; }
+  .candidate-hero h1 { font-size: 70px; }
+  .agenda-grid li { grid-template-columns: 1fr; gap: 12px; padding: 28px 24px; }
+  .priority-number { font-size: 48px; }
+  .candidate-values-list { grid-template-columns: 1fr; }
+  .candidate-values-list article:last-child { grid-column: auto; }
+}

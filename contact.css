@@ -1,0 +1,113 @@
+.contact-page { background: var(--red); }
+.contact-hero {
+  min-height: calc(100vh - 96px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(360px, .85fr);
+  gap: 0;
+  background: var(--red);
+  color: var(--white);
+}
+.contact-copy {
+  position: relative;
+  padding: 88px max(7vw, 48px) 74px;
+  overflow: hidden;
+}
+.contact-copy::after {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  left: -280px;
+  bottom: -150px;
+  border: 34px solid rgba(255,255,255,.13);
+  transform: rotate(45deg);
+}
+.contact-copy .eyebrow { color: var(--white); opacity: .85; }
+.contact-copy h1 {
+  margin: 0;
+  font-size: clamp(76px, 9vw, 138px);
+  font-weight: 900;
+  line-height: .76;
+  letter-spacing: .01em;
+}
+.contact-copy h1 span { color: var(--navy); }
+.contact-intro { max-width: 660px; margin: 34px 0 0; font-size: 20px; line-height: 1.65; }
+.contact-email {
+  display: inline-block;
+  margin-top: 26px;
+  color: var(--white);
+  font-size: 23px;
+  font-weight: 900;
+  text-underline-offset: 7px;
+  text-decoration-thickness: 3px;
+}
+.contact-email:hover { color: var(--navy); }
+.contact-note {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 52px;
+  font-family: 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;
+}
+.contact-note strong { font-size: 34px; line-height: 1; letter-spacing: .03em; }
+.contact-note span { font-size: 18px; font-weight: 700; letter-spacing: .04em; }
+
+.signup-panel {
+  position: relative;
+  margin: 48px 48px 48px 0;
+  padding: 54px 48px;
+  align-self: stretch;
+  background: var(--navy);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  border-top: 16px solid var(--white);
+}
+.panel-number {
+  position: absolute;
+  top: 22px;
+  right: 28px;
+  color: var(--red);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 94px;
+  line-height: 1;
+  font-weight: 900;
+  opacity: .38;
+}
+.signup-panel .red-bar-title { color: var(--white); }
+.signup-panel h2 {
+  margin: 24px 0 30px;
+  font-size: clamp(54px, 5.8vw, 84px);
+  line-height: .82;
+  font-weight: 900;
+}
+.signup-panel form { display: grid; gap: 14px; }
+.signup-panel label { font-size: 13px; font-weight: 900; text-transform: uppercase; letter-spacing: .1em; }
+.signup-panel input {
+  width: 100%;
+  padding: 15px 2px;
+  border: 0;
+  border-bottom: 3px solid #a8b7ca;
+  background: transparent;
+  color: var(--white);
+  font: 18px 'DM Sans', sans-serif;
+}
+.signup-panel input::placeholder { color: #aebdce; opacity: 1; }
+.signup-panel .button { width: max-content; margin-top: 12px; }
+.form-message { min-height: 24px; margin: 4px 0 0; font-weight: 700; color: #dce7f4; }
+
+@media (max-width: 960px) {
+  .contact-hero { grid-template-columns: 1fr; }
+  .signup-panel { margin: 0; border-top: 18px solid var(--white); }
+}
+@media (max-width: 560px) {
+  .contact-copy { padding: 62px 22px 54px; }
+  .contact-copy h1 { font-size: 76px; }
+  .contact-intro { font-size: 18px; }
+  .signup-panel { padding: 50px 22px; }
+  .signup-panel h2 { font-size: 58px; }
+  .signup-panel .button { width: 100%; }
+}

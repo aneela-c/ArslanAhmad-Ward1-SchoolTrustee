@@ -1,0 +1,14 @@
+.agenda-closing {
+  max-width: 980px;
+  margin: 42px 0 0;
+  padding: 30px 32px;
+  border-left: 12px solid var(--red);
+  background: var(--off-white);
+  color: var(--navy);
+}
+.agenda-closing p { margin: 0; font-size: 17px; line-height: 1.72; color: #46576c; }
+.agenda-closing p + p { margin-top: 16px; }
+@media (max-width: 560px) {
+  .agenda-closing { padding: 24px 22px; border-left-width: 8px; }
+  .agenda-closing p { font-size: 16px; }
+}

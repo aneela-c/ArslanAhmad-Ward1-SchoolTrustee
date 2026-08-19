@@ -1,31 +1,102 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Arslan Ahmad for York Region School Trustee — a strong voice for every student." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Arslan Ahmad for York Region District School Board Trustee — a strong voice for every student." />
   <title>Arslan Ahmad | School Trustee</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap" rel="stylesheet" /><link rel="stylesheet" href="styles.css" /><link rel="stylesheet" href="home.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="home.css" />
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="Arslan Ahmad home"><span>AA</span><strong>ARSLAN<br />AHMAD</strong></a>
+    <a class="brand" href="index.html" aria-label="Arslan Ahmad home">
+      <span class="brand-mark">AA</span>
+      <span class="brand-copy"><strong>Arslan Ahmad</strong><small>York Region School Trustee</small></span>
+    </a>
     <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false"><i></i><i></i></button>
-    <nav aria-label="Main navigation"><a href="about.html">Meet Arslan</a><a href="candidate.html">What I Stand For</a><a href="contact.html">Join the Campaign</a></nav>
+    <nav aria-label="Main navigation">
+      <a href="about.html">Meet Arslan</a>
+      <a href="candidate.html">What I Stand For</a>
+      <a class="nav-cta" href="contact.html">Join the Campaign</a>
+    </nav>
   </header>
+
   <main>
-    <section class="hero" aria-labelledby="mission-title">
-      <div class="hero-copy">
-        <h1 class="candidate-name" id="mission-title">ARSLAN AHMAD <span>FOR YORK REGION DISTRICT SCHOOL BOARD TRUSTEE</span></h1>
-        <h2 class="hero-mission">A strong voice<br /><em>for every student.</em></h2>
-        <p class="hero-intro"><strong>Every child deserves the best education.</strong><br />Practical, accountable leadership for strong public education and opportunity for every student.</p>
-        <div class="hero-actions"><a class="button button-primary" href="candidate.html">What Arslan stands for <span>→</span></a><a class="text-link" href="about.html">Meet Arslan <span>→</span></a></div>
+    <section class="poster-hero" aria-labelledby="mission-title">
+      <div class="poster-copy">
+        <div class="name-block">
+          <p>ARSLAN</p>
+          <p>AHMAD</p>
+        </div>
+
+        <div class="office-block">
+          <span aria-hidden="true"></span>
+          <div>
+            <small>FOR</small>
+            <h1 id="mission-title">YORK REGION DISTRICT SCHOOL BOARD TRUSTEE</h1>
+          </div>
+        </div>
+
+        <div class="priority-block">
+          <h2>MY PRIORITIES</h2>
+          <ul>
+            <li>Smaller classrooms</li>
+            <li>Every student matters</li>
+            <li>Equal opportunities</li>
+            <li>Responsible spending</li>
+          </ul>
+        </div>
+
+        <div class="leadership-card">
+          <strong>A strong voice for every student.</strong>
+          <p>Practical, accountable leadership focused on strong public education and opportunity for every child.</p>
+        </div>
+
+        <div class="hero-actions">
+          <a class="button button-light" href="candidate.html">View the priorities <span>→</span></a>
+          <a class="button button-outline" href="about.html">Meet Arslan</a>
+        </div>
+
+        <div class="vote-block">
+          <small>VOTE</small>
+          <strong>OCTOBER 26, 2026</strong>
+        </div>
       </div>
-      <div class="hero-art" aria-label="Arslan Ahmad, York Region"><p class="art-label">KING · YORK REGION</p></div>
+
+      <div class="hero-visual" aria-label="Arslan Ahmad campaign graphic">
+        <div class="visual-topline">KING · WARD 1 · YORK REGION</div>
+        <div class="monogram-panel" aria-hidden="true">
+          <span>AA</span>
+        </div>
+        <div class="visual-copy">
+          <p class="red-bar-title">Students first</p>
+          <h2>STRONG SCHOOLS.<br />STRONGER FUTURE.</h2>
+        </div>
+        <div class="campaign-badge" aria-hidden="true">
+          <span>YOUR VOTE</span>
+          <strong>WARD 1</strong>
+          <span>MATTERS</span>
+        </div>
+      </div>
     </section>
-    <section class="ballot-banner" aria-label="Election information"><span class="ballot-dot"></span><p><strong>ON THE BALLOT</strong> · York Region District School Board Trustee</p><p><strong>Election Day</strong> · October 26, 2026</p></section>
+
+    <section class="quick-priorities" aria-label="Campaign priorities">
+      <a href="candidate.html#priority-1"><span>01</span><strong>Smaller classrooms</strong></a>
+      <a href="candidate.html#priority-2"><span>02</span><strong>Every student matters</strong></a>
+      <a href="candidate.html#priority-3"><span>03</span><strong>Equal opportunities</strong></a>
+      <a href="candidate.html#priority-4"><span>04</span><strong>Making every dollar count</strong></a>
+    </section>
   </main>
-  <footer><a class="brand" href="index.html"><span>AA</span><strong>ARSLAN<br />AHMAD</strong></a><p>For York Region School Trustee</p><a href="mailto:Info@Vote4Arslan.ca">Info@Vote4Arslan.ca</a><p>© <span id="year"></span> Arslan Ahmad. All rights reserved.</p></footer>
+
+  <footer>
+    <a class="brand" href="index.html"><span class="brand-mark">AA</span><span class="brand-copy"><strong>Arslan Ahmad</strong><small>York Region School Trustee</small></span></a>
+    <div class="footer-meta"><p>For York Region School Trustee</p><a href="mailto:Info@Vote4Arslan.ca">Info@Vote4Arslan.ca</a></div>
+    <p class="footer-copy">© <span id="year"></span> Arslan Ahmad. All rights reserved.</p>
+  </footer>
   <script src="script.js"></script>
 </body>
 </html>
