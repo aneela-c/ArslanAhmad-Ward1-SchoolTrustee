@@ -1,142 +1,408 @@
-.about-page { background: var(--white); }
+/* =========================
+   ABOUT HERO
+   ========================= */
+
 .about-hero {
   display: grid;
-  grid-template-columns: minmax(390px, .86fr) minmax(0, 1.14fr);
-  min-height: 720px;
+
+  grid-template-columns:
+    minmax(400px, 0.9fr)
+    minmax(0, 1.1fr);
+
+  gap: 7vw;
+
+  align-items: center;
+
+  padding:
+    85px
+    max(7vw, 42px);
+
+  background: var(--white);
+
+  border-bottom: 1px solid var(--line);
 }
-.about-graphic {
+
+
+/* =========================
+   PHOTO
+   ========================= */
+
+.about-photo-wrap {
   position: relative;
+
+  width: min(600px, 100%);
+  height: 680px;
+
   overflow: hidden;
-  padding: 64px 46px 44px max(6vw, 46px);
-  background: var(--navy);
-  color: var(--white);
-  border-right: 18px solid var(--red);
+
+  background: var(--off-white);
+
+  border:
+    9px
+    solid
+    var(--white);
+
+  outline:
+    4px
+    solid
+    var(--navy);
+
+  box-shadow:
+    14px
+    14px
+    0
+    rgba(200, 32, 52, 0.12);
 }
-.about-graphic::after {
-  content: '';
+
+.about-photo {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center 15%;
+}
+
+.about-location {
   position: absolute;
-  width: 310px;
-  height: 310px;
-  right: -170px;
-  bottom: 120px;
+
+  left: 22px;
+  bottom: 22px;
+
+  padding: 10px 16px;
+
   background: var(--red);
-  transform: rotate(45deg);
-}
-.graphic-kicker {
-  display: inline-block;
-  margin: 0 0 12px;
-  padding: 8px 15px;
-  background: var(--red);
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 22px;
-  font-weight: 900;
-  letter-spacing: .1em;
-}
-.about-graphic h1 {
-  margin: 0;
   color: var(--white);
-  font-size: clamp(72px, 8vw, 122px);
-  font-weight: 900;
-  line-height: .78;
-  letter-spacing: .02em;
-}
-.graphic-office {
-  display: flex;
-  gap: 14px;
-  align-items: stretch;
-  margin-top: 30px;
+
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 28px;
-  line-height: 1;
-  letter-spacing: .02em;
-}
-.graphic-office span { width: 9px; background: var(--red); }
-.about-monogram {
-  position: relative;
-  z-index: 2;
-  width: min(72%, 320px);
-  aspect-ratio: 1;
-  margin: 54px 0 0 auto;
-  border: 10px solid var(--white);
-  background: var(--red);
-  display: grid;
-  place-items: center;
-  color: var(--white);
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(110px, 12vw, 190px);
+  font-size: 16px;
   font-weight: 900;
-  letter-spacing: -.08em;
-  box-shadow: -18px 18px 0 rgba(255,255,255,.12);
+
+  letter-spacing: 0.09em;
+
+  text-transform: uppercase;
 }
-.graphic-location {
-  position: absolute;
-  left: max(6vw, 46px);
-  bottom: 36px;
-  margin: 0;
-  font-size: 14px;
-  font-weight: 900;
-  letter-spacing: .14em;
-}
+
+
+/* =========================
+   ABOUT TEXT
+   ========================= */
 
 .about-copy {
-  padding: 78px max(8vw, 56px) 78px 7vw;
-  align-self: center;
+  max-width: 720px;
 }
-.about-copy h2 {
-  margin: 0 0 28px;
-  color: var(--navy);
-  font-size: clamp(62px, 6.5vw, 98px);
-  line-height: .84;
+
+.about-copy h1 {
+  margin:
+    0
+    0
+    32px;
+
+  color: var(--navy-deep);
+
+  font-size: clamp(63px, 6.5vw, 98px);
   font-weight: 900;
-  letter-spacing: .015em;
+
+  line-height: 0.83;
 }
-.about-copy h2 span { color: var(--red); }
+
+.about-copy h1 span {
+  display: block;
+
+  color: var(--red);
+}
+
 .about-copy > p:not(.eyebrow) {
-  max-width: 760px;
-  margin: 0 0 21px;
-  color: #3e4d62;
+  margin:
+    0
+    0
+    20px;
+
+  color: var(--muted);
+
   font-size: 18px;
-  line-height: 1.72;
-}
-.about-copy .button { margin-top: 12px; }
 
-.about-values {
+  line-height: 1.75;
+}
+
+
+/* =========================
+   WHAT I STAND FOR
+   ========================= */
+
+.stand-section {
+  padding:
+    100px
+    max(6vw, 34px)
+    110px;
+
+  background: var(--off-white);
+}
+
+.stand-heading {
+  width: min(920px, 100%);
+
+  margin:
+    0
+    auto;
+
+  text-align: center;
+}
+
+.stand-heading h2 {
+  margin: 0;
+
+  color: var(--navy-deep);
+
+  font-size: clamp(60px, 7vw, 100px);
+  font-weight: 900;
+
+  line-height: 0.84;
+}
+
+.stand-heading h2 span {
+  display: block;
+
+  color: var(--red);
+}
+
+.stand-heading > p:last-child {
+  width: min(650px, 100%);
+
+  margin:
+    24px
+    auto
+    0;
+
+  color: var(--muted);
+
+  font-size: 17px;
+}
+
+
+/* =========================
+   PRIORITY CARDS
+   ========================= */
+
+.stand-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  background: var(--red);
-  color: var(--white);
-}
-.about-values article {
-  padding: 44px max(3vw, 28px);
-  border-right: 2px solid rgba(255,255,255,.32);
-}
-.about-values article:last-child { border-right: 0; }
-.about-values span {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 50px;
-  font-weight: 900;
-  opacity: .45;
-}
-.about-values h3 {
-  margin: 5px 0 10px;
-  font-size: 34px;
-  line-height: 1;
-  font-weight: 900;
-}
-.about-values p { margin: 0; max-width: 460px; font-size: 16px; }
 
-@media (max-width: 980px) {
-  .about-hero { grid-template-columns: 1fr; }
-  .about-graphic { min-height: 620px; border-right: 0; border-bottom: 18px solid var(--red); }
-  .about-copy { padding: 64px 7vw 70px; }
-  .about-values { grid-template-columns: 1fr; }
-  .about-values article { border-right: 0; border-bottom: 2px solid rgba(255,255,255,.32); }
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 23px;
+
+  width: min(1200px, 100%);
+
+  margin:
+    55px
+    auto
+    0;
 }
-@media (max-width: 560px) {
-  .about-graphic { min-height: 560px; padding: 42px 22px; }
-  .graphic-location { left: 22px; }
-  .about-graphic h1 { font-size: 78px; }
-  .graphic-office { font-size: 23px; }
-  .about-copy h2 { font-size: 64px; }
-  .about-copy > p:not(.eyebrow) { font-size: 17px; }
+
+.stand-card {
+  position: relative;
+
+  min-height: 430px;
+
+  padding:
+    92px
+    38px
+    38px;
+
+  background: var(--white);
+
+  border:
+    2px
+    solid
+    var(--line);
+
+  border-top:
+    8px
+    solid
+    var(--red);
+
+  box-shadow:
+    0
+    12px
+    30px
+    rgba(13, 53, 95, 0.06);
+}
+
+.stand-card:nth-child(even) {
+  border-top-color: var(--navy);
+}
+
+.stand-number {
+  position: absolute;
+
+  top: 23px;
+  right: 28px;
+
+  color: var(--red);
+
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 62px;
+  font-weight: 900;
+
+  line-height: 0.8;
+}
+
+.stand-card:nth-child(even)
+.stand-number {
+  color: var(--navy);
+}
+
+.stand-card h3 {
+  margin: 0;
+
+  color: var(--navy-deep);
+
+  font-size: clamp(38px, 4vw, 54px);
+  font-weight: 900;
+
+  line-height: 0.92;
+}
+
+.stand-card p {
+  margin:
+    27px
+    0
+    0;
+
+  color: var(--muted);
+
+  font-size: 16px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================
+   CLOSING
+   ========================= */
+
+.stand-closing {
+  width: min(920px, 100%);
+
+  margin:
+    60px
+    auto
+    0;
+
+  padding:
+    32px
+    36px;
+
+  background: var(--white);
+
+  border-left:
+    7px
+    solid
+    var(--red);
+}
+
+.stand-closing p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 17px;
+
+  line-height: 1.75;
+}
+
+.stand-closing p + p {
+  margin-top: 17px;
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 950px) {
+
+  .about-hero {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+  }
+
+  .about-photo-wrap {
+    width: min(650px, 100%);
+
+    margin: 0 auto;
+  }
+
+  .about-copy {
+    max-width: 800px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 680px) {
+
+  .about-hero,
+  .stand-section {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .about-hero {
+    padding-top: 55px;
+    padding-bottom: 65px;
+  }
+
+  .about-photo-wrap {
+    height: 500px;
+  }
+
+  .about-copy h1 {
+    font-size: 61px;
+  }
+
+  .about-copy > p:not(.eyebrow) {
+    font-size: 17px;
+  }
+
+  .stand-heading {
+    text-align: left;
+  }
+
+  .stand-heading h2 {
+    font-size: 58px;
+  }
+
+  .stand-heading > p:last-child {
+    margin-left: 0;
+  }
+
+  .stand-grid {
+    grid-template-columns: 1fr;
+
+    margin-top: 40px;
+  }
+
+  .stand-card {
+    min-height: 0;
+
+    padding:
+      86px
+      25px
+      29px;
+  }
+
+  .stand-card h3 {
+    font-size: 39px;
+  }
+
+  .stand-closing {
+    padding:
+      26px
+      23px;
+  }
 }

@@ -1,113 +1,303 @@
-.contact-page { background: var(--red); }
+.contact-page {
+  background: var(--off-white);
+}
+
+
+/* =========================
+   MAIN CONTACT AREA
+   ========================= */
+
 .contact-hero {
-  min-height: calc(100vh - 96px);
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(360px, .85fr);
-  gap: 0;
-  background: var(--red);
-  color: var(--white);
+
+  grid-template-columns:
+    minmax(0, 1.05fr)
+    minmax(400px, 0.95fr);
+
+  align-items: center;
+
+  gap: 7vw;
+
+  min-height: 690px;
+
+  padding:
+    90px
+    max(8vw, 45px);
+
+  background: var(--off-white);
 }
+
+
+/* =========================
+   LEFT
+   ========================= */
+
 .contact-copy {
-  position: relative;
-  padding: 88px max(7vw, 48px) 74px;
-  overflow: hidden;
+  max-width: 720px;
 }
-.contact-copy::after {
-  content: '';
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  left: -280px;
-  bottom: -150px;
-  border: 34px solid rgba(255,255,255,.13);
-  transform: rotate(45deg);
-}
-.contact-copy .eyebrow { color: var(--white); opacity: .85; }
+
 .contact-copy h1 {
   margin: 0;
-  font-size: clamp(76px, 9vw, 138px);
+
+  color: var(--navy-deep);
+
+  font-size: clamp(72px, 7.5vw, 112px);
   font-weight: 900;
-  line-height: .76;
-  letter-spacing: .01em;
+
+  line-height: 0.82;
 }
-.contact-copy h1 span { color: var(--navy); }
-.contact-intro { max-width: 660px; margin: 34px 0 0; font-size: 20px; line-height: 1.65; }
+
+.contact-copy h1 span {
+  display: block;
+
+  color: var(--red);
+}
+
+.contact-intro {
+  max-width: 590px;
+
+  margin:
+    30px
+    0
+    0;
+
+  color: var(--muted);
+
+  font-size: 19px;
+
+  line-height: 1.7;
+}
+
+
+/* Email */
+
 .contact-email {
   display: inline-block;
-  margin-top: 26px;
-  color: var(--white);
-  font-size: 23px;
+
+  margin-top: 27px;
+
+  color: var(--navy-deep);
+
+  font-size: 20px;
   font-weight: 900;
-  text-underline-offset: 7px;
+
+  text-decoration-color: var(--red);
   text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
 }
-.contact-email:hover { color: var(--navy); }
-.contact-note {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  margin-top: 52px;
+
+.contact-email:hover {
+  color: var(--red);
+}
+
+
+/* Location */
+
+.contact-location {
+  display: grid;
+
+  gap: 4px;
+
+  margin-top: 37px;
+
+  padding:
+    19px
+    0
+    0;
+
+  border-top:
+    1px
+    solid
+    var(--line);
+}
+
+.contact-location strong {
+  color: var(--red);
+
   font-family: 'Barlow Condensed', sans-serif;
-  text-transform: uppercase;
+  font-size: 21px;
+  font-weight: 900;
+
+  letter-spacing: 0.08em;
 }
-.contact-note strong { font-size: 34px; line-height: 1; letter-spacing: .03em; }
-.contact-note span { font-size: 18px; font-weight: 700; letter-spacing: .04em; }
+
+.contact-location span {
+  color: var(--muted);
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   FORM PANEL
+   ========================= */
 
 .signup-panel {
-  position: relative;
-  margin: 48px 48px 48px 0;
-  padding: 54px 48px;
-  align-self: stretch;
-  background: var(--navy);
+  padding:
+    48px
+    44px;
+
+  background: var(--navy-deep);
   color: var(--white);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-shadow: var(--shadow);
-  border-top: 16px solid var(--white);
+
+  border-top:
+    9px
+    solid
+    var(--red);
+
+  box-shadow:
+    15px
+    15px
+    0
+    rgba(200, 32, 52, 0.12);
 }
-.panel-number {
-  position: absolute;
-  top: 22px;
-  right: 28px;
-  color: var(--red);
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 94px;
-  line-height: 1;
-  font-weight: 900;
-  opacity: .38;
+
+.signup-panel .eyebrow {
+  color: var(--red-soft);
 }
-.signup-panel .red-bar-title { color: var(--white); }
+
 .signup-panel h2 {
-  margin: 24px 0 30px;
-  font-size: clamp(54px, 5.8vw, 84px);
-  line-height: .82;
+  margin:
+    0
+    36px
+    32px
+    0;
+
+  color: var(--white);
+
+  font-size: clamp(58px, 6vw, 86px);
   font-weight: 900;
+
+  line-height: 0.82;
 }
-.signup-panel form { display: grid; gap: 14px; }
-.signup-panel label { font-size: 13px; font-weight: 900; text-transform: uppercase; letter-spacing: .1em; }
+
+.signup-panel h2 span {
+  display: block;
+
+  color: var(--red-soft);
+}
+
+
+/* =========================
+   FORM
+   ========================= */
+
+.signup-panel form {
+  display: grid;
+
+  gap: 13px;
+}
+
+.signup-panel label {
+  color: var(--white);
+
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 0.05em;
+
+  text-transform: uppercase;
+}
+
 .signup-panel input {
   width: 100%;
-  padding: 15px 2px;
-  border: 0;
-  border-bottom: 3px solid #a8b7ca;
+
+  padding:
+    15px
+    3px;
+
   background: transparent;
   color: var(--white);
-  font: 18px 'DM Sans', sans-serif;
-}
-.signup-panel input::placeholder { color: #aebdce; opacity: 1; }
-.signup-panel .button { width: max-content; margin-top: 12px; }
-.form-message { min-height: 24px; margin: 4px 0 0; font-weight: 700; color: #dce7f4; }
 
-@media (max-width: 960px) {
-  .contact-hero { grid-template-columns: 1fr; }
-  .signup-panel { margin: 0; border-top: 18px solid var(--white); }
+  border: 0;
+  border-bottom:
+    2px
+    solid
+    #7F9BB8;
+
+  font-size: 16px;
 }
-@media (max-width: 560px) {
-  .contact-copy { padding: 62px 22px 54px; }
-  .contact-copy h1 { font-size: 76px; }
-  .contact-intro { font-size: 18px; }
-  .signup-panel { padding: 50px 22px; }
-  .signup-panel h2 { font-size: 58px; }
-  .signup-panel .button { width: 100%; }
+
+.signup-panel input::placeholder {
+  color: #C7D4E1;
+}
+
+.signup-panel input:focus {
+  border-bottom-color: var(--red-soft);
+}
+
+.signup-panel .button {
+  width: max-content;
+
+  margin-top: 13px;
+}
+
+.form-message {
+  min-height: 24px;
+
+  margin: 2px 0 0;
+
+  color: var(--red-soft);
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 900px) {
+
+  .contact-hero {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+
+    padding:
+      70px
+      7vw;
+  }
+
+  .signup-panel {
+    max-width: 700px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+
+  .contact-hero {
+    padding:
+      55px
+      22px
+      70px;
+  }
+
+  .contact-copy h1 {
+    font-size: 64px;
+  }
+
+  .contact-intro {
+    font-size: 17px;
+  }
+
+  .signup-panel {
+    padding:
+      38px
+      25px;
+  }
+
+  .signup-panel h2 {
+    font-size: 58px;
+  }
+
+  .signup-panel .button {
+    width: 100%;
+  }
 }
