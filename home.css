@@ -286,6 +286,8 @@
 }
 
 
+/* Updated longer photo label */
+
 .hero-location {
   position: absolute;
 
@@ -294,8 +296,8 @@
   bottom: 0;
 
   padding:
-    13px
-    15px;
+    12px
+    14px;
 
   background: var(--navy);
 
@@ -306,13 +308,13 @@
     sans-serif;
 
   font-size:
-    clamp(16px, 1.5vw, 20px);
+    clamp(13px, 1.2vw, 17px);
 
   font-weight: 900;
 
-  line-height: 1;
+  line-height: 1.15;
 
-  letter-spacing: 0.09em;
+  letter-spacing: 0.055em;
 
   text-align: center;
 
@@ -505,8 +507,6 @@
   stroke-linejoin: round;
 }
 
-
-/* Heart works better filled */
 
 .priority-card:nth-child(2)
 .priority-icon svg {
@@ -723,7 +723,13 @@
 
 
   .hero-location {
-    font-size: 14px;
+    padding:
+      10px
+      9px;
+
+    font-size: 12px;
+
+    letter-spacing: 0.035em;
   }
 
 

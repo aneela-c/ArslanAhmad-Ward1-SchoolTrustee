@@ -69,15 +69,18 @@
 }
 
 
+/* Updated longer image label */
+
 .about-location {
   position: absolute;
 
   left: 22px;
+  right: 22px;
   bottom: 22px;
 
   padding:
     11px
-    17px;
+    14px;
 
   background: var(--red);
 
@@ -87,11 +90,16 @@
     'Barlow Condensed',
     sans-serif;
 
-  font-size: 17px;
+  font-size:
+    clamp(13px, 1.15vw, 16px);
 
   font-weight: 900;
 
-  letter-spacing: 0.09em;
+  line-height: 1.2;
+
+  letter-spacing: 0.05em;
+
+  text-align: center;
 
   text-transform: uppercase;
 }
@@ -377,6 +385,21 @@
 
   .about-photo-wrap {
     height: 500px;
+  }
+
+
+  .about-location {
+    left: 13px;
+    right: 13px;
+    bottom: 13px;
+
+    padding:
+      9px
+      8px;
+
+    font-size: 12px;
+
+    letter-spacing: 0.025em;
   }
 
 
