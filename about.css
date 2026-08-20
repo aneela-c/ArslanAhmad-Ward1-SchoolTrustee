@@ -1,6 +1,6 @@
-/* =========================
+/* =========================================================
    ABOUT HERO
-   ========================= */
+   ========================================================= */
 
 .about-hero {
   display: grid;
@@ -19,13 +19,16 @@
 
   background: var(--white);
 
-  border-bottom: 1px solid var(--line);
+  border-bottom:
+    1px
+    solid
+    var(--line);
 }
 
 
-/* =========================
+/* =========================================================
    PHOTO
-   ========================= */
+   ========================================================= */
 
 .about-photo-wrap {
   position: relative;
@@ -59,6 +62,7 @@
   height: 100%;
 
   object-fit: cover;
+
   object-position: center 15%;
 }
 
@@ -68,13 +72,16 @@
   left: 22px;
   bottom: 22px;
 
-  padding: 10px 16px;
+  padding:
+    11px
+    17px;
 
   background: var(--red);
   color: var(--white);
 
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 16px;
+
+  font-size: 17px;
   font-weight: 900;
 
   letter-spacing: 0.09em;
@@ -83,12 +90,25 @@
 }
 
 
-/* =========================
-   ABOUT TEXT
-   ========================= */
+/* =========================================================
+   ABOUT COPY
+   ========================================================= */
 
 .about-copy {
   max-width: 720px;
+}
+
+
+/*
+  Specifically increased because
+  "Meet Arslan" was too small.
+*/
+
+.about-copy .eyebrow {
+  margin-bottom: 16px;
+
+  font-size: 18px;
+  letter-spacing: 0.13em;
 }
 
 .about-copy h1 {
@@ -99,7 +119,8 @@
 
   color: var(--navy-deep);
 
-  font-size: clamp(63px, 6.5vw, 98px);
+  font-size: clamp(65px, 6.5vw, 100px);
+
   font-weight: 900;
 
   line-height: 0.83;
@@ -115,19 +136,19 @@
   margin:
     0
     0
-    20px;
+    21px;
 
   color: var(--muted);
 
-  font-size: 18px;
+  font-size: 18.5px;
 
-  line-height: 1.75;
+  line-height: 1.78;
 }
 
 
-/* =========================
+/* =========================================================
    WHAT I STAND FOR
-   ========================= */
+   ========================================================= */
 
 .stand-section {
   padding:
@@ -141,11 +162,13 @@
 .stand-heading {
   width: min(920px, 100%);
 
-  margin:
-    0
-    auto;
+  margin: 0 auto;
 
   text-align: center;
+}
+
+.stand-heading .eyebrow {
+  font-size: 16px;
 }
 
 .stand-heading h2 {
@@ -153,7 +176,8 @@
 
   color: var(--navy-deep);
 
-  font-size: clamp(60px, 7vw, 100px);
+  font-size: clamp(62px, 7vw, 100px);
+
   font-weight: 900;
 
   line-height: 0.84;
@@ -166,22 +190,24 @@
 }
 
 .stand-heading > p:last-child {
-  width: min(650px, 100%);
+  width: min(700px, 100%);
 
   margin:
-    24px
+    25px
     auto
     0;
 
   color: var(--muted);
 
-  font-size: 17px;
+  font-size: 18px;
+
+  line-height: 1.75;
 }
 
 
-/* =========================
+/* =========================================================
    PRIORITY CARDS
-   ========================= */
+   ========================================================= */
 
 .stand-grid {
   display: grid;
@@ -189,7 +215,7 @@
   grid-template-columns:
     repeat(2, minmax(0, 1fr));
 
-  gap: 23px;
+  gap: 24px;
 
   width: min(1200px, 100%);
 
@@ -241,6 +267,7 @@
   color: var(--red);
 
   font-family: 'Barlow Condensed', sans-serif;
+
   font-size: 62px;
   font-weight: 900;
 
@@ -257,7 +284,8 @@
 
   color: var(--navy-deep);
 
-  font-size: clamp(38px, 4vw, 54px);
+  font-size: clamp(39px, 4vw, 54px);
+
   font-weight: 900;
 
   line-height: 0.92;
@@ -271,15 +299,15 @@
 
   color: var(--muted);
 
-  font-size: 16px;
+  font-size: 17.5px;
 
-  line-height: 1.75;
+  line-height: 1.76;
 }
 
 
-/* =========================
-   CLOSING
-   ========================= */
+/* =========================================================
+   STAND CLOSING
+   ========================================================= */
 
 .stand-closing {
   width: min(920px, 100%);
@@ -290,8 +318,8 @@
     0;
 
   padding:
-    32px
-    36px;
+    34px
+    38px;
 
   background: var(--white);
 
@@ -306,19 +334,168 @@
 
   color: var(--muted);
 
-  font-size: 17px;
+  font-size: 18px;
+
+  line-height: 1.78;
+}
+
+.stand-closing p + p {
+  margin-top: 18px;
+}
+
+
+/* =========================================================
+   WHO I AM AS A CANDIDATE
+   ========================================================= */
+
+.candidate-identity {
+  padding:
+    100px
+    max(7vw, 40px)
+    110px;
+
+  background: var(--white);
+
+  border-top:
+    1px
+    solid
+    var(--line);
+}
+
+.identity-heading {
+  width: min(900px, 100%);
+
+  margin:
+    0
+    auto;
+
+  text-align: center;
+}
+
+.identity-heading .eyebrow {
+  margin-bottom: 12px;
+
+  font-size: 16px;
+}
+
+.identity-heading h2 {
+  margin: 0;
+
+  color: var(--navy-deep);
+
+  font-size: clamp(62px, 7vw, 100px);
+
+  font-weight: 900;
+
+  line-height: 0.84;
+}
+
+.identity-heading h2 span {
+  display: block;
+
+  color: var(--red);
+}
+
+
+/* Candidate qualities */
+
+.identity-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 22px;
+
+  width: min(1150px, 100%);
+
+  margin:
+    55px
+    auto
+    0;
+}
+
+.identity-card {
+  position: relative;
+
+  padding:
+    74px
+    34px
+    34px;
+
+  background: var(--off-white);
+
+  border:
+    1px
+    solid
+    var(--line);
+
+  border-left:
+    6px
+    solid
+    var(--red);
+}
+
+.identity-card:nth-child(even) {
+  border-left-color: var(--navy);
+}
+
+.identity-card-wide {
+  grid-column:
+    1
+    /
+    -1;
+}
+
+.identity-number {
+  position: absolute;
+
+  top: 22px;
+  right: 25px;
+
+  color: var(--red);
+
+  font-family: 'Barlow Condensed', sans-serif;
+
+  font-size: 43px;
+  font-weight: 900;
+
+  line-height: 0.8;
+}
+
+.identity-card:nth-child(even)
+.identity-number {
+  color: var(--navy);
+}
+
+.identity-card h3 {
+  margin: 0;
+
+  color: var(--navy-deep);
+
+  font-size: 36px;
+  font-weight: 900;
+
+  line-height: 1;
+}
+
+.identity-card p {
+  margin:
+    20px
+    0
+    0;
+
+  color: var(--muted);
+
+  font-size: 17.5px;
 
   line-height: 1.75;
 }
 
-.stand-closing p + p {
-  margin-top: 17px;
-}
 
-
-/* =========================
+/* =========================================================
    TABLET
-   ========================= */
+   ========================================================= */
 
 @media (max-width: 950px) {
 
@@ -331,7 +508,9 @@
   .about-photo-wrap {
     width: min(650px, 100%);
 
-    margin: 0 auto;
+    margin:
+      0
+      auto;
   }
 
   .about-copy {
@@ -340,14 +519,15 @@
 }
 
 
-/* =========================
+/* =========================================================
    MOBILE
-   ========================= */
+   ========================================================= */
 
 @media (max-width: 680px) {
 
   .about-hero,
-  .stand-section {
+  .stand-section,
+  .candidate-identity {
     padding-left: 22px;
     padding-right: 22px;
   }
@@ -361,19 +541,25 @@
     height: 500px;
   }
 
+  .about-copy .eyebrow {
+    font-size: 17px;
+  }
+
   .about-copy h1 {
     font-size: 61px;
   }
 
   .about-copy > p:not(.eyebrow) {
-    font-size: 17px;
+    font-size: 17.5px;
   }
 
-  .stand-heading {
+  .stand-heading,
+  .identity-heading {
     text-align: left;
   }
 
-  .stand-heading h2 {
+  .stand-heading h2,
+  .identity-heading h2 {
     font-size: 58px;
   }
 
@@ -381,7 +567,8 @@
     margin-left: 0;
   }
 
-  .stand-grid {
+  .stand-grid,
+  .identity-grid {
     grid-template-columns: 1fr;
 
     margin-top: 40px;
@@ -397,12 +584,39 @@
   }
 
   .stand-card h3 {
-    font-size: 39px;
+    font-size: 40px;
+  }
+
+  .stand-card p {
+    font-size: 17px;
   }
 
   .stand-closing {
     padding:
-      26px
-      23px;
+      27px
+      24px;
+  }
+
+  .stand-closing p {
+    font-size: 17px;
+  }
+
+  .identity-card-wide {
+    grid-column: auto;
+  }
+
+  .identity-card {
+    padding:
+      72px
+      25px
+      29px;
+  }
+
+  .identity-card h3 {
+    font-size: 34px;
+  }
+
+  .identity-card p {
+    font-size: 17px;
   }
 }

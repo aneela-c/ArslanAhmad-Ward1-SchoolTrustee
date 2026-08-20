@@ -1,10 +1,5 @@
 /* =========================================================
-   HOMEPAGE
-   ========================================================= */
-
-
-/* =========================================================
-   HERO
+   HOMEPAGE HERO
    ========================================================= */
 
 .home-hero {
@@ -18,14 +13,12 @@
 
   align-items: center;
 
-  gap: clamp(35px, 5vw, 80px);
-
-  min-height: calc(100vh - 92px);
+  gap: clamp(40px, 5vw, 80px);
 
   padding:
-    38px
+    48px
     max(7vw, 48px)
-    42px;
+    52px;
 
   overflow: hidden;
 
@@ -39,15 +32,14 @@
     ),
     var(--white);
 
-  border-bottom: 1px solid var(--line);
+  border-bottom:
+    1px
+    solid
+    var(--line);
 }
 
 
-/*
-  Subtle civic background element.
-  Keeps the hero from feeling like one
-  giant empty white rectangle.
-*/
+/* Soft background element */
 
 .home-hero::after {
   content: '';
@@ -57,8 +49,8 @@
   width: 430px;
   height: 430px;
 
-  right: -180px;
-  bottom: -230px;
+  right: -190px;
+  bottom: -250px;
 
   border-radius: 50%;
 
@@ -67,7 +59,6 @@
 
   pointer-events: none;
 }
-
 
 
 /* =========================================================
@@ -80,28 +71,27 @@
   z-index: 2;
 
   width: 100%;
-  max-width: 800px;
+  max-width: 850px;
 }
 
 
-/*
-  This is intentionally much larger
-  than the previous eyebrow.
-*/
+/* Candidate label */
 
 .hero-candidate-label {
   margin:
     0
     0
-    21px;
+    20px;
 
   color: var(--red);
 
-  font-family:
-    'Barlow Condensed',
-    sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
 
-  font-size: clamp(22px, 2.25vw, 33px);
+  /*
+    Important campaign identifier,
+    now intentionally prominent.
+  */
+  font-size: clamp(25px, 2.3vw, 35px);
 
   font-weight: 900;
 
@@ -113,17 +103,14 @@
 }
 
 
-
 /* Main slogan */
 
 .hero-copy h1 {
   margin: 0;
 
-  font-family:
-    'Barlow Condensed',
-    sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
 
-  font-size: clamp(78px, 8vw, 124px);
+  font-size: clamp(78px, 7.7vw, 120px);
 
   font-weight: 900;
 
@@ -134,16 +121,13 @@
   text-transform: uppercase;
 }
 
-
 .hero-copy h1 span {
   display: block;
 }
 
-
 .headline-blue {
   color: var(--navy-deep);
 }
-
 
 .headline-red {
   margin-top: 8px;
@@ -152,21 +136,18 @@
 }
 
 
-
-/* Small divider under slogan */
+/* Accent divider */
 
 .hero-accent {
   display: flex;
-
   align-items: center;
 
   gap: 13px;
 
   width: min(590px, 90%);
 
-  margin-top: 29px;
+  margin-top: 27px;
 }
-
 
 .hero-accent span {
   height: 2px;
@@ -175,9 +156,8 @@
 
   background: var(--red);
 
-  opacity: 0.55;
+  opacity: 0.5;
 }
-
 
 .hero-accent i {
   width: 11px;
@@ -191,9 +171,54 @@
 }
 
 
+/* =========================================================
+   MISSION
+   ========================================================= */
+
+.hero-mission {
+  max-width: 680px;
+
+  margin-top: 27px;
+}
+
+.mission-label {
+  margin:
+    0
+    0
+    7px;
+
+  color: var(--navy-deep);
+
+  font-family: 'Barlow Condensed', sans-serif;
+
+  font-size: 19px;
+  font-weight: 900;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+.hero-mission > p:last-child {
+  margin: 0;
+
+  color: var(--muted);
+
+  /*
+    Increased for much easier reading.
+  */
+  font-size: 18px;
+
+  line-height: 1.72;
+}
+
+.hero-mission strong {
+  color: var(--navy-deep);
+}
+
 
 /* =========================================================
-   PHOTO COLUMN
+   PHOTO
    ========================================================= */
 
 .hero-photo-column {
@@ -202,26 +227,18 @@
   z-index: 2;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
   min-width: 0;
 }
 
-
-/*
-  Portrait-shaped container.
-  This lets us show the entire photo
-  without the giant cropped image problem.
-*/
-
 .hero-photo-wrap {
   position: relative;
 
   width: auto;
 
-  height: min(64vh, 610px);
+  height: min(63vh, 600px);
 
   aspect-ratio: 1249 / 1600;
 
@@ -250,21 +267,13 @@
   overflow: hidden;
 }
 
-
-/* Entire image stays visible */
-
 .hero-photo {
   width: 100%;
   height: 100%;
 
   object-fit: contain;
-
   object-position: center;
 }
-
-
-
-/* Location strip */
 
 .hero-location {
   position: absolute;
@@ -274,19 +283,16 @@
   bottom: 0;
 
   padding:
-    12px
+    13px
     15px;
 
   background: var(--navy);
 
   color: var(--white);
 
-  font-family:
-    'Barlow Condensed',
-    sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
 
-  font-size: clamp(15px, 1.5vw, 20px);
-
+  font-size: clamp(16px, 1.5vw, 20px);
   font-weight: 900;
 
   line-height: 1;
@@ -294,7 +300,6 @@
   letter-spacing: 0.09em;
 
   text-align: center;
-
   text-transform: uppercase;
 
   border-top:
@@ -304,30 +309,26 @@
 }
 
 
-
 /* =========================================================
    PRIORITIES
    ========================================================= */
 
 .home-priorities {
   padding:
-    70px
-    max(6vw, 36px)
-    82px;
+    85px
+    max(7vw, 40px)
+    95px;
 
   background:
     linear-gradient(
       to bottom,
-      #F5F8FB,
+      #F4F7FA,
       var(--off-white)
     );
 }
 
 
-
-/* =========================================================
-   PRIORITY HEADING
-   ========================================================= */
+/* Priority section heading */
 
 .priority-heading {
   width: min(950px, 100%);
@@ -337,28 +338,25 @@
   text-align: center;
 }
 
-
 .priority-heading .eyebrow {
-  margin-bottom: 9px;
+  margin-bottom: 10px;
 
-  font-size: 15px;
+  font-size: 16px;
 }
-
 
 .priority-heading h2 {
   margin: 0;
 
   color: var(--navy-deep);
 
-  font-size: clamp(53px, 5.8vw, 82px);
+  font-size: clamp(58px, 6vw, 88px);
 
   font-weight: 900;
 
-  line-height: 0.86;
+  line-height: 0.85;
 
   letter-spacing: 0.005em;
 }
-
 
 .priority-heading h2 span {
   display: block;
@@ -367,45 +365,42 @@
 }
 
 
-
 /* =========================================================
-   PRIORITY GRID
+   DETAILED PRIORITY GRID
    ========================================================= */
 
 .priority-grid {
   display: grid;
 
+  /*
+    Detailed paragraphs need more width.
+    2 x 2 is much more readable than 4 across.
+  */
   grid-template-columns:
-    repeat(4, minmax(0, 1fr));
+    repeat(2, minmax(0, 1fr));
 
-  gap: 20px;
+  gap: 24px;
 
-  width: min(1450px, 100%);
+  width: min(1220px, 100%);
 
   margin:
-    43px
+    50px
     auto
     0;
 }
 
 
-
-/* =========================================================
-   PRIORITY CARD
-   ========================================================= */
+/* Priority card */
 
 .priority-card {
   position: relative;
 
-  display: flex;
-  flex-direction: column;
-
-  min-height: 305px;
+  min-height: 470px;
 
   padding:
-    73px
-    25px
-    25px;
+    90px
+    38px
+    38px;
 
   overflow: hidden;
 
@@ -417,47 +412,41 @@
     var(--line);
 
   border-top:
-    6px
+    7px
     solid
     var(--red);
 
-  border-radius: 7px;
+  border-radius: 8px;
 
   box-shadow:
     0
-    9px
-    25px
-    rgba(13, 53, 95, 0.08);
+    10px
+    28px
+    rgba(13, 53, 95, 0.075);
 }
-
 
 .priority-card:nth-child(even) {
   border-top-color: var(--navy);
 }
 
 
-
-/* Number */
+/* Card number */
 
 .priority-number {
   position: absolute;
 
-  top: 20px;
-  right: 23px;
+  top: 24px;
+  right: 30px;
 
   color: var(--red);
 
-  font-family:
-    'Barlow Condensed',
-    sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
 
-  font-size: 52px;
-
+  font-size: 58px;
   font-weight: 900;
 
   line-height: 0.8;
 }
-
 
 .priority-card:nth-child(even)
 .priority-number {
@@ -465,70 +454,66 @@
 }
 
 
-
-/* Heading */
+/* Card title */
 
 .priority-card h3 {
   margin: 0;
 
   color: var(--navy-deep);
 
-  font-size: clamp(28px, 2.2vw, 36px);
+  font-size: clamp(39px, 4vw, 53px);
 
   font-weight: 900;
 
-  line-height: 0.96;
+  line-height: 0.93;
 
   letter-spacing: 0.005em;
 }
 
 
-
-/* Text */
+/* Detailed text */
 
 .priority-card p {
   margin:
-    19px
+    27px
     0
     0;
 
   color: var(--muted);
 
-  font-size: 14.5px;
+  /*
+    Larger than the old 14–15px card text.
+  */
+  font-size: 17.5px;
 
-  line-height: 1.62;
+  line-height: 1.75;
 }
 
 
-
-/* Decorative lower corner */
+/* Decorative corner */
 
 .priority-card::after {
   content: '';
 
   position: absolute;
 
-  right: -25px;
-  bottom: -25px;
+  right: -27px;
+  bottom: -27px;
 
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
 
   background: var(--red);
 
   transform: rotate(45deg);
 }
 
-
 .priority-card:nth-child(even)::after {
   background: var(--navy);
 }
 
 
-
-/* =========================================================
-   PRIORITY LINK
-   ========================================================= */
+/* Meet Arslan link */
 
 .priority-more {
   display: block;
@@ -537,14 +522,13 @@
   max-width: 100%;
 
   margin:
-    33px
+    40px
     auto
     0;
 
   color: var(--navy-deep);
 
-  font-size: 13px;
-
+  font-size: 15px;
   font-weight: 900;
 
   letter-spacing: 0.04em;
@@ -560,61 +544,48 @@
   text-transform: uppercase;
 }
 
-
 .priority-more span {
   margin-left: 5px;
 }
-
 
 .priority-more:hover {
   color: var(--red);
 }
 
 
-
 /* =========================================================
-   SMALLER DESKTOP / TABLET
+   TABLET
    ========================================================= */
 
-@media (max-width: 1100px) {
+@media (max-width: 1050px) {
 
   .home-hero {
     grid-template-columns:
       minmax(0, 1fr)
-      minmax(330px, 0.8fr);
+      minmax(320px, 0.8fr);
 
-    gap: 40px;
-
-    min-height: auto;
+    gap: 38px;
 
     padding-top: 55px;
-    padding-bottom: 58px;
+    padding-bottom: 60px;
   }
-
 
   .hero-copy h1 {
-    font-size: clamp(68px, 7.3vw, 94px);
+    font-size: clamp(68px, 7vw, 94px);
   }
 
+  .hero-candidate-label {
+    font-size: 24px;
+  }
 
   .hero-photo-wrap {
-    height: min(60vh, 550px);
+    height: min(58vh, 530px);
   }
-
-
-  .priority-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-
-    max-width: 880px;
-  }
-
 
   .priority-card {
-    min-height: 280px;
+    min-height: 0;
   }
 }
-
 
 
 /* =========================================================
@@ -626,9 +597,7 @@
   .home-hero {
     grid-template-columns: 1fr;
 
-    gap: 35px;
-
-    min-height: auto;
+    gap: 38px;
 
     padding:
       45px
@@ -636,28 +605,27 @@
       58px;
   }
 
-
   .hero-copy {
     max-width: none;
   }
 
-
   .hero-candidate-label {
-    margin-bottom: 16px;
+    margin-bottom: 17px;
 
-    font-size: 21px;
+    font-size: 22px;
   }
-
 
   .hero-copy h1 {
     font-size: clamp(58px, 17vw, 76px);
   }
 
-
   .hero-accent {
     margin-top: 23px;
   }
 
+  .hero-mission > p:last-child {
+    font-size: 17px;
+  }
 
   .hero-photo-wrap {
     width: min(100%, 430px);
@@ -667,62 +635,56 @@
     aspect-ratio: 1249 / 1600;
   }
 
-
   .hero-location {
     font-size: 14px;
   }
 
-
   .home-priorities {
     padding:
-      64px
+      68px
       22px
-      75px;
+      78px;
   }
-
 
   .priority-heading {
     text-align: left;
   }
 
-
   .priority-heading .eyebrow {
-    font-size: 13px;
+    font-size: 14px;
   }
-
 
   .priority-heading h2 {
     font-size: 57px;
   }
 
-
   .priority-grid {
     grid-template-columns: 1fr;
 
-    margin-top: 35px;
+    margin-top: 38px;
   }
-
 
   .priority-card {
     min-height: 0;
 
     padding:
-      72px
-      24px
-      26px;
+      82px
+      25px
+      30px;
   }
-
 
   .priority-card h3 {
-    font-size: 35px;
+    font-size: 40px;
   }
 
+  .priority-card p {
+    font-size: 17px;
+  }
 
   .priority-more {
     margin-left: 0;
   }
 }
-
 
 
 /* =========================================================
@@ -732,17 +694,14 @@
 @media (max-width: 430px) {
 
   .hero-candidate-label {
-    font-size: 18px;
+    font-size: 19px;
   }
-
 
   .hero-copy h1 {
     font-size: 55px;
   }
 
-
   .priority-heading h2 {
     font-size: 51px;
   }
-
 }
