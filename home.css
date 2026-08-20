@@ -1,154 +1,333 @@
-/* =========================
-   HOMEPAGE HERO
-   ========================= */
+/* =========================================================
+   HOMEPAGE
+   ========================================================= */
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
 
 .home-hero {
-  min-height: calc(100vh - 92px);
+  position: relative;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.12fr)
+    minmax(380px, 0.88fr);
+
+  align-items: center;
+
+  gap: clamp(35px, 5vw, 80px);
+
+  min-height: calc(100vh - 92px);
 
   padding:
     38px
-    max(7vw, 40px)
-    46px;
+    max(7vw, 48px)
+    42px;
 
-  background: var(--white);
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      155deg,
+      transparent 0%,
+      transparent 72%,
+      rgba(23, 74, 126, 0.035) 72%,
+      rgba(23, 74, 126, 0.035) 100%
+    ),
+    var(--white);
 
   border-bottom: 1px solid var(--line);
 }
 
 
-/* =========================
-   SLOGAN
-   ========================= */
+/*
+  Subtle civic background element.
+  Keeps the hero from feeling like one
+  giant empty white rectangle.
+*/
 
-.hero-heading {
-  width: min(1050px, 100%);
+.home-hero::after {
+  content: '';
 
+  position: absolute;
+
+  width: 430px;
+  height: 430px;
+
+  right: -180px;
+  bottom: -230px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(23, 74, 126, 0.035);
+
+  pointer-events: none;
+}
+
+
+
+/* =========================================================
+   HERO COPY
+   ========================================================= */
+
+.hero-copy {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  max-width: 800px;
+}
+
+
+/*
+  This is intentionally much larger
+  than the previous eyebrow.
+*/
+
+.hero-candidate-label {
   margin:
     0
-    auto
-    25px;
+    0
+    21px;
 
-  text-align: center;
-}
+  color: var(--red);
 
-.hero-heading .eyebrow {
-  margin-bottom: 8px;
-}
+  font-family:
+    'Barlow Condensed',
+    sans-serif;
 
-.hero-heading h1 {
-  margin: 0;
+  font-size: clamp(22px, 2.25vw, 33px);
 
-  color: var(--navy-deep);
-
-  font-size: clamp(56px, 6.2vw, 88px);
   font-weight: 900;
 
-  line-height: 0.84;
+  line-height: 1;
 
-  letter-spacing: 0.01em;
+  letter-spacing: 0.035em;
+
+  text-transform: uppercase;
 }
 
-.hero-heading h1 span {
+
+
+/* Main slogan */
+
+.hero-copy h1 {
+  margin: 0;
+
+  font-family:
+    'Barlow Condensed',
+    sans-serif;
+
+  font-size: clamp(78px, 8vw, 124px);
+
+  font-weight: 900;
+
+  line-height: 0.79;
+
+  letter-spacing: 0.005em;
+
+  text-transform: uppercase;
+}
+
+
+.hero-copy h1 span {
   display: block;
+}
+
+
+.headline-blue {
+  color: var(--navy-deep);
+}
+
+
+.headline-red {
+  margin-top: 8px;
 
   color: var(--red);
 }
 
 
-/* =========================
-   PHOTO
-   ========================= */
+
+/* Small divider under slogan */
+
+.hero-accent {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  width: min(590px, 90%);
+
+  margin-top: 29px;
+}
+
+
+.hero-accent span {
+  height: 2px;
+
+  flex: 1;
+
+  background: var(--red);
+
+  opacity: 0.55;
+}
+
+
+.hero-accent i {
+  width: 11px;
+  height: 11px;
+
+  flex: 0 0 auto;
+
+  background: var(--red);
+
+  transform: rotate(45deg);
+}
+
+
+
+/* =========================================================
+   PHOTO COLUMN
+   ========================================================= */
+
+.hero-photo-column {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+}
+
+
+/*
+  Portrait-shaped container.
+  This lets us show the entire photo
+  without the giant cropped image problem.
+*/
 
 .hero-photo-wrap {
   position: relative;
 
-  height: min(53vh, 555px);
+  width: auto;
+
+  height: min(64vh, 610px);
 
   aspect-ratio: 1249 / 1600;
 
-  width: auto;
   max-width: 100%;
 
-  margin: 0 auto;
-
-  background: var(--off-white);
+  background: #F0EBE5;
 
   border:
-    8px
+    7px
     solid
     var(--white);
 
+  border-radius: 12px;
+
   outline:
-    4px
+    3px
     solid
-    var(--navy);
+    rgba(13, 53, 95, 0.18);
 
   box-shadow:
-    12px
-    12px
     0
-    rgba(200, 32, 52, 0.12);
+    17px
+    40px
+    rgba(13, 53, 95, 0.16);
 
   overflow: hidden;
 }
+
+
+/* Entire image stays visible */
 
 .hero-photo {
   width: 100%;
   height: 100%;
 
   object-fit: contain;
+
   object-position: center;
 }
 
 
-/* Location label */
+
+/* Location strip */
 
 .hero-location {
   position: absolute;
 
-  left: 20px;
-  bottom: 20px;
+  left: 0;
+  right: 0;
+  bottom: 0;
 
-  padding: 9px 15px;
+  padding:
+    12px
+    15px;
 
-  background: var(--navy-deep);
+  background: var(--navy);
+
   color: var(--white);
 
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 15px;
+  font-family:
+    'Barlow Condensed',
+    sans-serif;
+
+  font-size: clamp(15px, 1.5vw, 20px);
+
   font-weight: 900;
 
-  letter-spacing: 0.1em;
+  line-height: 1;
+
+  letter-spacing: 0.09em;
+
+  text-align: center;
 
   text-transform: uppercase;
 
-  box-shadow:
-    6px
-    6px
-    0
+  border-top:
+    4px
+    solid
     var(--red);
 }
 
 
-/* =========================
-   PRIORITIES SECTION
-   ========================= */
+
+/* =========================================================
+   PRIORITIES
+   ========================================================= */
 
 .home-priorities {
   padding:
-    95px
-    max(5vw, 32px)
-    105px;
+    70px
+    max(6vw, 36px)
+    82px;
 
-  background: var(--off-white);
+  background:
+    linear-gradient(
+      to bottom,
+      #F5F8FB,
+      var(--off-white)
+    );
 }
 
 
-/* Heading */
+
+/* =========================================================
+   PRIORITY HEADING
+   ========================================================= */
 
 .priority-heading {
   width: min(950px, 100%);
@@ -158,22 +337,28 @@
   text-align: center;
 }
 
+
 .priority-heading .eyebrow {
-  margin-bottom: 13px;
+  margin-bottom: 9px;
+
+  font-size: 15px;
 }
+
 
 .priority-heading h2 {
   margin: 0;
 
   color: var(--navy-deep);
 
-  font-size: clamp(60px, 7vw, 100px);
+  font-size: clamp(53px, 5.8vw, 82px);
+
   font-weight: 900;
 
-  line-height: 0.84;
+  line-height: 0.86;
 
-  letter-spacing: 0.01em;
+  letter-spacing: 0.005em;
 }
+
 
 .priority-heading h2 span {
   display: block;
@@ -182,9 +367,10 @@
 }
 
 
-/* =========================
-   PRIORITY CARDS
-   ========================= */
+
+/* =========================================================
+   PRIORITY GRID
+   ========================================================= */
 
 .priority-grid {
   display: grid;
@@ -197,10 +383,16 @@
   width: min(1450px, 100%);
 
   margin:
-    55px
+    43px
     auto
     0;
 }
+
+
+
+/* =========================================================
+   PRIORITY CARD
+   ========================================================= */
 
 .priority-card {
   position: relative;
@@ -208,55 +400,64 @@
   display: flex;
   flex-direction: column;
 
-  min-height: 410px;
+  min-height: 305px;
 
   padding:
-    85px
-    27px
-    30px;
+    73px
+    25px
+    25px;
+
+  overflow: hidden;
 
   background: var(--white);
 
   border:
-    2px
+    1px
     solid
     var(--line);
 
   border-top:
-    8px
+    6px
     solid
     var(--red);
 
+  border-radius: 7px;
+
   box-shadow:
     0
-    12px
-    32px
-    rgba(13, 53, 95, 0.07);
-
-  overflow: hidden;
+    9px
+    25px
+    rgba(13, 53, 95, 0.08);
 }
+
 
 .priority-card:nth-child(even) {
   border-top-color: var(--navy);
 }
 
 
-/* Card number */
+
+/* Number */
 
 .priority-number {
   position: absolute;
 
-  top: 21px;
-  right: 24px;
+  top: 20px;
+  right: 23px;
 
   color: var(--red);
 
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 61px;
+  font-family:
+    'Barlow Condensed',
+    sans-serif;
+
+  font-size: 52px;
+
   font-weight: 900;
 
   line-height: 0.8;
 }
+
 
 .priority-card:nth-child(even)
 .priority-number {
@@ -264,62 +465,70 @@
 }
 
 
-/* Card headings */
+
+/* Heading */
 
 .priority-card h3 {
   margin: 0;
 
   color: var(--navy-deep);
 
-  font-size: clamp(31px, 2.5vw, 40px);
+  font-size: clamp(28px, 2.2vw, 36px);
+
   font-weight: 900;
 
-  line-height: 0.94;
+  line-height: 0.96;
 
   letter-spacing: 0.005em;
 }
 
 
-/* Card text */
+
+/* Text */
 
 .priority-card p {
   margin:
-    25px
+    19px
     0
     0;
 
   color: var(--muted);
 
-  font-size: 15.5px;
+  font-size: 14.5px;
 
-  line-height: 1.7;
+  line-height: 1.62;
 }
 
 
-/* Decorative corner */
+
+/* Decorative lower corner */
 
 .priority-card::after {
   content: '';
 
   position: absolute;
 
-  right: -26px;
-  bottom: -26px;
+  right: -25px;
+  bottom: -25px;
 
-  width: 48px;
-  height: 48px;
+  width: 45px;
+  height: 45px;
 
   background: var(--red);
 
   transform: rotate(45deg);
 }
 
+
 .priority-card:nth-child(even)::after {
   background: var(--navy);
 }
 
 
-/* Read more */
+
+/* =========================================================
+   PRIORITY LINK
+   ========================================================= */
 
 .priority-more {
   display: block;
@@ -328,13 +537,14 @@
   max-width: 100%;
 
   margin:
-    42px
+    33px
     auto
     0;
 
   color: var(--navy-deep);
 
-  font-size: 14px;
+  font-size: 13px;
+
   font-weight: 900;
 
   letter-spacing: 0.04em;
@@ -342,130 +552,171 @@
   text-decoration: underline;
 
   text-decoration-color: var(--red);
+
   text-decoration-thickness: 3px;
+
   text-underline-offset: 6px;
 
   text-transform: uppercase;
 }
 
+
 .priority-more span {
   margin-left: 5px;
 }
+
 
 .priority-more:hover {
   color: var(--red);
 }
 
 
-/* =========================
-   TABLET
-   ========================= */
 
-@media (max-width: 1000px) {
+/* =========================================================
+   SMALLER DESKTOP / TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
 
   .home-hero {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(330px, 0.8fr);
+
+    gap: 40px;
+
     min-height: auto;
 
-    padding-top: 50px;
-    padding-bottom: 60px;
+    padding-top: 55px;
+    padding-bottom: 58px;
   }
 
-  .hero-photo-wrap {
-    height: min(58vh, 560px);
+
+  .hero-copy h1 {
+    font-size: clamp(68px, 7.3vw, 94px);
   }
+
+
+  .hero-photo-wrap {
+    height: min(60vh, 550px);
+  }
+
 
   .priority-grid {
     grid-template-columns:
       repeat(2, minmax(0, 1fr));
 
-    max-width: 850px;
+    max-width: 880px;
   }
 
+
   .priority-card {
-    min-height: 360px;
+    min-height: 280px;
   }
 }
 
 
-/* =========================
+
+/* =========================================================
    MOBILE
-   ========================= */
+   ========================================================= */
 
-@media (max-width: 620px) {
-
-  .home-hero,
-  .home-priorities {
-    padding-left: 22px;
-    padding-right: 22px;
-  }
+@media (max-width: 760px) {
 
   .home-hero {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+
     min-height: auto;
 
-    padding-top: 42px;
-    padding-bottom: 55px;
+    padding:
+      45px
+      22px
+      58px;
   }
 
-  .hero-heading {
-    text-align: left;
 
-    margin-bottom: 28px;
+  .hero-copy {
+    max-width: none;
   }
 
-  .hero-heading h1 {
-    font-size: 56px;
+
+  .hero-candidate-label {
+    margin-bottom: 16px;
+
+    font-size: 21px;
   }
+
+
+  .hero-copy h1 {
+    font-size: clamp(58px, 17vw, 76px);
+  }
+
+
+  .hero-accent {
+    margin-top: 23px;
+  }
+
 
   .hero-photo-wrap {
     width: min(100%, 430px);
+
     height: auto;
 
     aspect-ratio: 1249 / 1600;
-
-    border-width: 6px;
-    outline-width: 3px;
   }
 
-  .hero-photo {
-    object-fit: contain;
-    object-position: center;
-  }
 
   .hero-location {
-    left: 14px;
-    bottom: 14px;
-
-    font-size: 12px;
-
-    letter-spacing: 0.06em;
+    font-size: 14px;
   }
+
+
+  .home-priorities {
+    padding:
+      64px
+      22px
+      75px;
+  }
+
 
   .priority-heading {
     text-align: left;
   }
 
-  .priority-heading h2 {
-    font-size: 58px;
+
+  .priority-heading .eyebrow {
+    font-size: 13px;
   }
+
+
+  .priority-heading h2 {
+    font-size: 57px;
+  }
+
 
   .priority-grid {
     grid-template-columns: 1fr;
 
-    margin-top: 38px;
+    margin-top: 35px;
   }
+
 
   .priority-card {
     min-height: 0;
 
     padding:
-      80px
+      72px
       24px
-      27px;
+      26px;
   }
 
+
   .priority-card h3 {
-    font-size: 36px;
+    font-size: 35px;
   }
+
 
   .priority-more {
     margin-left: 0;
@@ -473,17 +724,25 @@
 }
 
 
-/* =========================
+
+/* =========================================================
    SMALL PHONES
-   ========================= */
+   ========================================================= */
 
-@media (max-width: 420px) {
+@media (max-width: 430px) {
 
-  .hero-heading h1 {
-    font-size: 49px;
+  .hero-candidate-label {
+    font-size: 18px;
   }
 
-  .hero-photo-wrap {
-    width: min(100%, 390px);
+
+  .hero-copy h1 {
+    font-size: 55px;
   }
+
+
+  .priority-heading h2 {
+    font-size: 51px;
+  }
+
 }

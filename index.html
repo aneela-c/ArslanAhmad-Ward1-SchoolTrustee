@@ -34,17 +34,22 @@
 
   <link
     rel="stylesheet"
-    href="styles.css?v=20260819-6"
+    href="styles.css?v=20260819-7"
   />
 
   <link
     rel="stylesheet"
-    href="home.css?v=20260819-6"
+    href="home.css?v=20260819-7"
   />
 </head>
 
 
 <body>
+
+
+  <!-- =========================
+       HEADER
+       ========================= -->
 
   <header class="site-header">
 
@@ -121,46 +126,76 @@
       aria-labelledby="home-title"
     >
 
-      <div class="hero-heading">
 
-        <p class="eyebrow">
+      <!-- LEFT: SLOGAN -->
+
+      <div class="hero-copy">
+
+        <p class="hero-candidate-label">
           ARSLAN AHMAD FOR SCHOOL TRUSTEE
         </p>
 
+
         <h1 id="home-title">
-          A STRONG VOICE
-          <span>FOR EVERY STUDENT.</span>
+
+          <span class="headline-blue">
+            A STRONG VOICE
+          </span>
+
+          <span class="headline-red">
+            FOR EVERY STUDENT.
+          </span>
+
         </h1>
 
-      </div>
 
-
-      <div class="hero-photo-wrap">
-
-        <img
-          class="hero-photo"
-          src="arslan-ahmad.jpg"
-          alt="Arslan Ahmad, candidate for York Region District School Board Trustee"
-        />
-
-        <div class="hero-location">
-          KING · WARD 1 · YORK REGION
+        <div
+          class="hero-accent"
+          aria-hidden="true"
+        >
+          <span></span>
+          <i></i>
+          <span></span>
         </div>
 
       </div>
+
+
+
+      <!-- RIGHT: PHOTO -->
+
+      <div class="hero-photo-column">
+
+        <div class="hero-photo-wrap">
+
+          <img
+            class="hero-photo"
+            src="arslan-ahmad.jpg"
+            alt="Arslan Ahmad, candidate for York Region District School Board Trustee"
+          />
+
+          <div class="hero-location">
+            KING · WARD 1 · YORK REGION
+          </div>
+
+        </div>
+
+      </div>
+
 
     </section>
 
 
 
     <!-- =========================
-         PRIORITIES
+         FOUR PRIORITIES
          ========================= -->
 
     <section
       class="home-priorities"
       aria-labelledby="priorities-title"
     >
+
 
       <header class="priority-heading">
 
@@ -176,8 +211,11 @@
       </header>
 
 
+
       <div class="priority-grid">
 
+
+        <!-- 01 -->
 
         <article class="priority-card">
 
@@ -199,6 +237,8 @@
 
 
 
+        <!-- 02 -->
+
         <article class="priority-card">
 
           <span class="priority-number">
@@ -217,6 +257,8 @@
         </article>
 
 
+
+        <!-- 03 -->
 
         <article class="priority-card">
 
@@ -238,6 +280,8 @@
         </article>
 
 
+
+        <!-- 04 -->
 
         <article class="priority-card">
 
@@ -262,6 +306,7 @@
       </div>
 
 
+
       <a
         class="priority-more"
         href="about.html#priorities"
@@ -270,11 +315,16 @@
         <span>→</span>
       </a>
 
+
     </section>
 
   </main>
 
 
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
 
   <footer>
 
@@ -326,4 +376,5 @@
   <script src="script.js"></script>
 
 </body>
+
 </html>
