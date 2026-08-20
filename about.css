@@ -26,14 +26,15 @@
 }
 
 
-/* =========================================================
+/* =========================
    PHOTO
-   ========================================================= */
+   ========================= */
 
 .about-photo-wrap {
   position: relative;
 
   width: min(600px, 100%);
+
   height: 680px;
 
   overflow: hidden;
@@ -57,6 +58,7 @@
     rgba(200, 32, 52, 0.12);
 }
 
+
 .about-photo {
   width: 100%;
   height: 100%;
@@ -65,6 +67,7 @@
 
   object-position: center 15%;
 }
+
 
 .about-location {
   position: absolute;
@@ -77,11 +80,15 @@
     17px;
 
   background: var(--red);
+
   color: var(--white);
 
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family:
+    'Barlow Condensed',
+    sans-serif;
 
   font-size: 17px;
+
   font-weight: 900;
 
   letter-spacing: 0.09em;
@@ -95,21 +102,18 @@
    ========================================================= */
 
 .about-copy {
-  max-width: 720px;
+  max-width: 760px;
 }
 
-
-/*
-  Specifically increased because
-  "Meet Arslan" was too small.
-*/
 
 .about-copy .eyebrow {
   margin-bottom: 16px;
 
   font-size: 18px;
+
   letter-spacing: 0.13em;
 }
+
 
 .about-copy h1 {
   margin:
@@ -119,18 +123,21 @@
 
   color: var(--navy-deep);
 
-  font-size: clamp(65px, 6.5vw, 100px);
+  font-size:
+    clamp(61px, 6vw, 92px);
 
   font-weight: 900;
 
-  line-height: 0.83;
+  line-height: 0.85;
 }
+
 
 .about-copy h1 span {
   display: block;
 
   color: var(--red);
 }
+
 
 .about-copy > p:not(.eyebrow) {
   margin:
@@ -147,204 +154,6 @@
 
 
 /* =========================================================
-   WHAT I STAND FOR
-   ========================================================= */
-
-.stand-section {
-  padding:
-    100px
-    max(6vw, 34px)
-    110px;
-
-  background: var(--off-white);
-}
-
-.stand-heading {
-  width: min(920px, 100%);
-
-  margin: 0 auto;
-
-  text-align: center;
-}
-
-.stand-heading .eyebrow {
-  font-size: 16px;
-}
-
-.stand-heading h2 {
-  margin: 0;
-
-  color: var(--navy-deep);
-
-  font-size: clamp(62px, 7vw, 100px);
-
-  font-weight: 900;
-
-  line-height: 0.84;
-}
-
-.stand-heading h2 span {
-  display: block;
-
-  color: var(--red);
-}
-
-.stand-heading > p:last-child {
-  width: min(700px, 100%);
-
-  margin:
-    25px
-    auto
-    0;
-
-  color: var(--muted);
-
-  font-size: 18px;
-
-  line-height: 1.75;
-}
-
-
-/* =========================================================
-   PRIORITY CARDS
-   ========================================================= */
-
-.stand-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  gap: 24px;
-
-  width: min(1200px, 100%);
-
-  margin:
-    55px
-    auto
-    0;
-}
-
-.stand-card {
-  position: relative;
-
-  min-height: 430px;
-
-  padding:
-    92px
-    38px
-    38px;
-
-  background: var(--white);
-
-  border:
-    2px
-    solid
-    var(--line);
-
-  border-top:
-    8px
-    solid
-    var(--red);
-
-  box-shadow:
-    0
-    12px
-    30px
-    rgba(13, 53, 95, 0.06);
-}
-
-.stand-card:nth-child(even) {
-  border-top-color: var(--navy);
-}
-
-.stand-number {
-  position: absolute;
-
-  top: 23px;
-  right: 28px;
-
-  color: var(--red);
-
-  font-family: 'Barlow Condensed', sans-serif;
-
-  font-size: 62px;
-  font-weight: 900;
-
-  line-height: 0.8;
-}
-
-.stand-card:nth-child(even)
-.stand-number {
-  color: var(--navy);
-}
-
-.stand-card h3 {
-  margin: 0;
-
-  color: var(--navy-deep);
-
-  font-size: clamp(39px, 4vw, 54px);
-
-  font-weight: 900;
-
-  line-height: 0.92;
-}
-
-.stand-card p {
-  margin:
-    27px
-    0
-    0;
-
-  color: var(--muted);
-
-  font-size: 17.5px;
-
-  line-height: 1.76;
-}
-
-
-/* =========================================================
-   STAND CLOSING
-   ========================================================= */
-
-.stand-closing {
-  width: min(920px, 100%);
-
-  margin:
-    60px
-    auto
-    0;
-
-  padding:
-    34px
-    38px;
-
-  background: var(--white);
-
-  border-left:
-    7px
-    solid
-    var(--red);
-}
-
-.stand-closing p {
-  margin: 0;
-
-  color: var(--muted);
-
-  font-size: 18px;
-
-  line-height: 1.78;
-}
-
-.stand-closing p + p {
-  margin-top: 18px;
-}
-
-
-/* =========================================================
    WHO I AM AS A CANDIDATE
    ========================================================= */
 
@@ -354,23 +163,18 @@
     max(7vw, 40px)
     110px;
 
-  background: var(--white);
-
-  border-top:
-    1px
-    solid
-    var(--line);
+  background: var(--off-white);
 }
+
 
 .identity-heading {
   width: min(900px, 100%);
 
-  margin:
-    0
-    auto;
+  margin: 0 auto;
 
   text-align: center;
 }
+
 
 .identity-heading .eyebrow {
   margin-bottom: 12px;
@@ -378,17 +182,20 @@
   font-size: 16px;
 }
 
+
 .identity-heading h2 {
   margin: 0;
 
   color: var(--navy-deep);
 
-  font-size: clamp(62px, 7vw, 100px);
+  font-size:
+    clamp(62px, 7vw, 100px);
 
   font-weight: 900;
 
   line-height: 0.84;
 }
+
 
 .identity-heading h2 span {
   display: block;
@@ -397,7 +204,9 @@
 }
 
 
-/* Candidate qualities */
+/* =========================
+   CANDIDATE QUALITIES
+   ========================= */
 
 .identity-grid {
   display: grid;
@@ -415,6 +224,7 @@
     0;
 }
 
+
 .identity-card {
   position: relative;
 
@@ -423,7 +233,7 @@
     34px
     34px;
 
-  background: var(--off-white);
+  background: var(--white);
 
   border:
     1px
@@ -434,11 +244,19 @@
     6px
     solid
     var(--red);
+
+  box-shadow:
+    0
+    10px
+    25px
+    rgba(13, 53, 95, 0.055);
 }
+
 
 .identity-card:nth-child(even) {
   border-left-color: var(--navy);
 }
+
 
 .identity-card-wide {
   grid-column:
@@ -446,6 +264,9 @@
     /
     -1;
 }
+
+
+/* Number */
 
 .identity-number {
   position: absolute;
@@ -455,18 +276,25 @@
 
   color: var(--red);
 
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family:
+    'Barlow Condensed',
+    sans-serif;
 
   font-size: 43px;
+
   font-weight: 900;
 
   line-height: 0.8;
 }
 
+
 .identity-card:nth-child(even)
 .identity-number {
   color: var(--navy);
 }
+
+
+/* Heading */
 
 .identity-card h3 {
   margin: 0;
@@ -474,10 +302,14 @@
   color: var(--navy-deep);
 
   font-size: 36px;
+
   font-weight: 900;
 
   line-height: 1;
 }
+
+
+/* Text */
 
 .identity-card p {
   margin:
@@ -505,17 +337,21 @@
     gap: 55px;
   }
 
+
   .about-photo-wrap {
-    width: min(650px, 100%);
+    width:
+      min(650px, 100%);
 
     margin:
       0
       auto;
   }
 
+
   .about-copy {
     max-width: 800px;
   }
+
 }
 
 
@@ -526,84 +362,60 @@
 @media (max-width: 680px) {
 
   .about-hero,
-  .stand-section,
   .candidate-identity {
     padding-left: 22px;
     padding-right: 22px;
   }
 
+
   .about-hero {
     padding-top: 55px;
+
     padding-bottom: 65px;
   }
+
 
   .about-photo-wrap {
     height: 500px;
   }
 
+
   .about-copy .eyebrow {
     font-size: 17px;
   }
 
+
   .about-copy h1 {
-    font-size: 61px;
+    font-size: 56px;
   }
+
 
   .about-copy > p:not(.eyebrow) {
     font-size: 17.5px;
   }
 
-  .stand-heading,
+
   .identity-heading {
     text-align: left;
   }
 
-  .stand-heading h2,
+
   .identity-heading h2 {
     font-size: 58px;
   }
 
-  .stand-heading > p:last-child {
-    margin-left: 0;
-  }
 
-  .stand-grid,
   .identity-grid {
     grid-template-columns: 1fr;
 
     margin-top: 40px;
   }
 
-  .stand-card {
-    min-height: 0;
-
-    padding:
-      86px
-      25px
-      29px;
-  }
-
-  .stand-card h3 {
-    font-size: 40px;
-  }
-
-  .stand-card p {
-    font-size: 17px;
-  }
-
-  .stand-closing {
-    padding:
-      27px
-      24px;
-  }
-
-  .stand-closing p {
-    font-size: 17px;
-  }
 
   .identity-card-wide {
     grid-column: auto;
   }
+
 
   .identity-card {
     padding:
@@ -612,11 +424,14 @@
       29px;
   }
 
+
   .identity-card h3 {
     font-size: 34px;
   }
 
+
   .identity-card p {
     font-size: 17px;
   }
+
 }

@@ -39,8 +39,6 @@
 }
 
 
-/* Soft background element */
-
 .home-hero::after {
   content: '';
 
@@ -61,9 +59,9 @@
 }
 
 
-/* =========================================================
+/* =========================
    HERO COPY
-   ========================================================= */
+   ========================= */
 
 .hero-copy {
   position: relative;
@@ -75,8 +73,6 @@
 }
 
 
-/* Candidate label */
-
 .hero-candidate-label {
   margin:
     0
@@ -85,13 +81,12 @@
 
   color: var(--red);
 
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family:
+    'Barlow Condensed',
+    sans-serif;
 
-  /*
-    Important campaign identifier,
-    now intentionally prominent.
-  */
-  font-size: clamp(25px, 2.3vw, 35px);
+  font-size:
+    clamp(25px, 2.3vw, 35px);
 
   font-weight: 900;
 
@@ -103,31 +98,39 @@
 }
 
 
-/* Main slogan */
+/* =========================
+   MAIN SLOGAN
+   ========================= */
 
 .hero-copy h1 {
   margin: 0;
 
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family:
+    'Barlow Condensed',
+    sans-serif;
 
-  font-size: clamp(78px, 7.7vw, 120px);
+  font-size:
+    clamp(72px, 7.2vw, 112px);
 
   font-weight: 900;
 
-  line-height: 0.79;
+  line-height: 0.82;
 
   letter-spacing: 0.005em;
 
   text-transform: uppercase;
 }
 
+
 .hero-copy h1 span {
   display: block;
 }
 
+
 .headline-blue {
   color: var(--navy-deep);
 }
+
 
 .headline-red {
   margin-top: 8px;
@@ -136,10 +139,13 @@
 }
 
 
-/* Accent divider */
+/* =========================
+   ACCENT DIVIDER
+   ========================= */
 
 .hero-accent {
   display: flex;
+
   align-items: center;
 
   gap: 13px;
@@ -148,6 +154,7 @@
 
   margin-top: 27px;
 }
+
 
 .hero-accent span {
   height: 2px;
@@ -158,6 +165,7 @@
 
   opacity: 0.5;
 }
+
 
 .hero-accent i {
   width: 11px;
@@ -171,15 +179,16 @@
 }
 
 
-/* =========================================================
+/* =========================
    MISSION
-   ========================================================= */
+   ========================= */
 
 .hero-mission {
   max-width: 680px;
 
   margin-top: 27px;
 }
+
 
 .mission-label {
   margin:
@@ -189,9 +198,12 @@
 
   color: var(--navy-deep);
 
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family:
+    'Barlow Condensed',
+    sans-serif;
 
   font-size: 19px;
+
   font-weight: 900;
 
   letter-spacing: 0.08em;
@@ -199,27 +211,21 @@
   text-transform: uppercase;
 }
 
+
 .hero-mission > p:last-child {
   margin: 0;
 
   color: var(--muted);
 
-  /*
-    Increased for much easier reading.
-  */
   font-size: 18px;
 
   line-height: 1.72;
 }
 
-.hero-mission strong {
-  color: var(--navy-deep);
-}
 
-
-/* =========================================================
+/* =========================
    PHOTO
-   ========================================================= */
+   ========================= */
 
 .hero-photo-column {
   position: relative;
@@ -227,11 +233,13 @@
   z-index: 2;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
   min-width: 0;
 }
+
 
 .hero-photo-wrap {
   position: relative;
@@ -267,13 +275,16 @@
   overflow: hidden;
 }
 
+
 .hero-photo {
   width: 100%;
   height: 100%;
 
   object-fit: contain;
+
   object-position: center;
 }
+
 
 .hero-location {
   position: absolute;
@@ -290,9 +301,13 @@
 
   color: var(--white);
 
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family:
+    'Barlow Condensed',
+    sans-serif;
 
-  font-size: clamp(16px, 1.5vw, 20px);
+  font-size:
+    clamp(16px, 1.5vw, 20px);
+
   font-weight: 900;
 
   line-height: 1;
@@ -300,6 +315,7 @@
   letter-spacing: 0.09em;
 
   text-align: center;
+
   text-transform: uppercase;
 
   border-top:
@@ -328,7 +344,9 @@
 }
 
 
-/* Priority section heading */
+/* =========================
+   PRIORITY HEADING
+   ========================= */
 
 .priority-heading {
   width: min(950px, 100%);
@@ -338,18 +356,21 @@
   text-align: center;
 }
 
+
 .priority-heading .eyebrow {
   margin-bottom: 10px;
 
   font-size: 16px;
 }
 
+
 .priority-heading h2 {
   margin: 0;
 
   color: var(--navy-deep);
 
-  font-size: clamp(58px, 6vw, 88px);
+  font-size:
+    clamp(58px, 6vw, 88px);
 
   font-weight: 900;
 
@@ -357,6 +378,7 @@
 
   letter-spacing: 0.005em;
 }
+
 
 .priority-heading h2 span {
   display: block;
@@ -366,16 +388,12 @@
 
 
 /* =========================================================
-   DETAILED PRIORITY GRID
+   PRIORITY GRID
    ========================================================= */
 
 .priority-grid {
   display: grid;
 
-  /*
-    Detailed paragraphs need more width.
-    2 x 2 is much more readable than 4 across.
-  */
   grid-template-columns:
     repeat(2, minmax(0, 1fr));
 
@@ -390,7 +408,9 @@
 }
 
 
-/* Priority card */
+/* =========================
+   PRIORITY CARD
+   ========================= */
 
 .priority-card {
   position: relative;
@@ -398,7 +418,7 @@
   min-height: 470px;
 
   padding:
-    90px
+    36px
     38px
     38px;
 
@@ -425,43 +445,88 @@
     rgba(13, 53, 95, 0.075);
 }
 
+
 .priority-card:nth-child(even) {
   border-top-color: var(--navy);
 }
 
 
-/* Card number */
+/* =========================
+   FLYER-STYLE ICONS
+   ========================= */
 
-.priority-number {
-  position: absolute;
+.priority-icon {
+  width: 82px;
+  height: 82px;
 
-  top: 24px;
-  right: 30px;
+  display: grid;
 
-  color: var(--red);
+  place-items: center;
 
-  font-family: 'Barlow Condensed', sans-serif;
+  margin-bottom: 25px;
 
-  font-size: 58px;
-  font-weight: 900;
+  border-radius: 50%;
 
-  line-height: 0.8;
+  background: var(--white);
+
+  border:
+    4px
+    solid
+    var(--red);
+
+  color: var(--navy-deep);
+
+  box-shadow:
+    0
+    7px
+    18px
+    rgba(13, 53, 95, 0.09);
 }
+
 
 .priority-card:nth-child(even)
-.priority-number {
-  color: var(--navy);
+.priority-icon {
+  border-color: var(--navy);
 }
 
 
-/* Card title */
+.priority-icon svg {
+  width: 48px;
+  height: 48px;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 4;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+}
+
+
+/* Heart works better filled */
+
+.priority-card:nth-child(2)
+.priority-icon svg {
+  fill: var(--navy-deep);
+
+  stroke: var(--navy-deep);
+}
+
+
+/* =========================
+   CARD TITLES
+   ========================= */
 
 .priority-card h3 {
   margin: 0;
 
   color: var(--navy-deep);
 
-  font-size: clamp(39px, 4vw, 53px);
+  font-size:
+    clamp(39px, 4vw, 53px);
 
   font-weight: 900;
 
@@ -471,19 +536,18 @@
 }
 
 
-/* Detailed text */
+/* =========================
+   CARD TEXT
+   ========================= */
 
 .priority-card p {
   margin:
-    27px
+    25px
     0
     0;
 
   color: var(--muted);
 
-  /*
-    Larger than the old 14–15px card text.
-  */
   font-size: 17.5px;
 
   line-height: 1.75;
@@ -508,12 +572,15 @@
   transform: rotate(45deg);
 }
 
+
 .priority-card:nth-child(even)::after {
   background: var(--navy);
 }
 
 
-/* Meet Arslan link */
+/* =========================
+   MEET ARSLAN LINK
+   ========================= */
 
 .priority-more {
   display: block;
@@ -529,6 +596,7 @@
   color: var(--navy-deep);
 
   font-size: 15px;
+
   font-weight: 900;
 
   letter-spacing: 0.04em;
@@ -544,9 +612,11 @@
   text-transform: uppercase;
 }
 
+
 .priority-more span {
   margin-left: 5px;
 }
+
 
 .priority-more:hover {
   color: var(--red);
@@ -570,21 +640,28 @@
     padding-bottom: 60px;
   }
 
+
   .hero-copy h1 {
-    font-size: clamp(68px, 7vw, 94px);
+    font-size:
+      clamp(64px, 7vw, 90px);
   }
+
 
   .hero-candidate-label {
     font-size: 24px;
   }
 
+
   .hero-photo-wrap {
-    height: min(58vh, 530px);
+    height:
+      min(58vh, 530px);
   }
+
 
   .priority-card {
     min-height: 0;
   }
+
 }
 
 
@@ -605,9 +682,11 @@
       58px;
   }
 
+
   .hero-copy {
     max-width: none;
   }
+
 
   .hero-candidate-label {
     margin-bottom: 17px;
@@ -615,29 +694,38 @@
     font-size: 22px;
   }
 
+
   .hero-copy h1 {
-    font-size: clamp(58px, 17vw, 76px);
+    font-size:
+      clamp(54px, 16vw, 73px);
   }
+
 
   .hero-accent {
     margin-top: 23px;
   }
 
+
   .hero-mission > p:last-child {
     font-size: 17px;
   }
 
+
   .hero-photo-wrap {
-    width: min(100%, 430px);
+    width:
+      min(100%, 430px);
 
     height: auto;
 
-    aspect-ratio: 1249 / 1600;
+    aspect-ratio:
+      1249 / 1600;
   }
+
 
   .hero-location {
     font-size: 14px;
   }
+
 
   .home-priorities {
     padding:
@@ -646,17 +734,21 @@
       78px;
   }
 
+
   .priority-heading {
     text-align: left;
   }
+
 
   .priority-heading .eyebrow {
     font-size: 14px;
   }
 
+
   .priority-heading h2 {
     font-size: 57px;
   }
+
 
   .priority-grid {
     grid-template-columns: 1fr;
@@ -664,26 +756,45 @@
     margin-top: 38px;
   }
 
+
   .priority-card {
     min-height: 0;
 
     padding:
-      82px
+      30px
       25px
       30px;
   }
+
+
+  .priority-icon {
+    width: 72px;
+    height: 72px;
+
+    margin-bottom: 22px;
+  }
+
+
+  .priority-icon svg {
+    width: 42px;
+    height: 42px;
+  }
+
 
   .priority-card h3 {
     font-size: 40px;
   }
 
+
   .priority-card p {
     font-size: 17px;
   }
 
+
   .priority-more {
     margin-left: 0;
   }
+
 }
 
 
@@ -697,11 +808,14 @@
     font-size: 19px;
   }
 
+
   .hero-copy h1 {
-    font-size: 55px;
+    font-size: 51px;
   }
+
 
   .priority-heading h2 {
     font-size: 51px;
   }
+
 }
