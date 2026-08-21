@@ -11,7 +11,7 @@
 
   <meta
     name="description"
-    content="Contact Arslan Ahmad, candidate for York Region School Trustee."
+    content="Contact Arslan Ahmad, YRDSB School Trustee Candidate."
   />
 
   <title>Contact | Arslan Ahmad</title>
@@ -26,17 +26,21 @@
 
   <link
     rel="stylesheet"
-    href="styles.css?v=20260821-1"
+    href="styles.css?v=20260821-2"
   />
 
   <link
     rel="stylesheet"
-    href="contact.css?v=20260821-1"
+    href="contact.css?v=20260821-2"
   />
 </head>
 
 
 <body>
+
+  <!-- =========================
+       HEADER
+       ========================= -->
 
   <header class="site-header">
 
@@ -72,6 +76,7 @@
       class="menu-toggle"
       aria-label="Open navigation"
       aria-expanded="false"
+      type="button"
     >
       <i></i>
       <i></i>
@@ -106,6 +111,10 @@
 
 
 
+  <!-- =========================
+       MAIN
+       ========================= -->
+
   <main class="contact-page">
 
     <section
@@ -114,7 +123,9 @@
     >
 
 
-      <!-- CONTACT INFORMATION -->
+      <!-- =========================
+           LEFT: CONTACT INFORMATION
+           ========================= -->
 
       <div class="contact-copy">
 
@@ -142,6 +153,8 @@
 
         <div class="contact-details">
 
+
+          <!-- PHONE -->
 
           <a
             class="contact-detail"
@@ -171,6 +184,8 @@
 
 
 
+          <!-- EMAIL -->
+
           <a
             class="contact-detail"
             href="mailto:info@vote4arslan.ca"
@@ -198,6 +213,8 @@
           </a>
 
 
+
+          <!-- WEBSITE -->
 
           <a
             class="contact-detail"
@@ -236,7 +253,7 @@
           </strong>
 
           <span>
-            York Region School Trustee Candidate
+            YRDSB School Trustee Candidate
           </span>
 
         </div>
@@ -245,7 +262,9 @@
 
 
 
-      <!-- VOLUNTEER FORM -->
+      <!-- =========================
+           RIGHT: VOLUNTEER FORM
+           ========================= -->
 
       <div class="volunteer-panel">
 
@@ -253,9 +272,15 @@
           GET INVOLVED
         </p>
 
+
         <h2>
+
           JOIN THE
-          <span>CAMPAIGN</span>
+
+          <span>
+            CAMPAIGN
+          </span>
+
         </h2>
 
 
@@ -265,7 +290,15 @@
         </p>
 
 
-        <form id="signup-form">
+
+        <form
+          id="signup-form"
+          action="submit-volunteer.php"
+          method="POST"
+        >
+
+
+          <!-- NAME -->
 
           <div class="name-row">
 
@@ -281,6 +314,7 @@
                 type="text"
                 autocomplete="given-name"
                 placeholder="First Name"
+                maxlength="80"
                 required
               />
 
@@ -299,6 +333,7 @@
                 type="text"
                 autocomplete="family-name"
                 placeholder="Last Name"
+                maxlength="80"
                 required
               />
 
@@ -307,6 +342,8 @@
           </div>
 
 
+
+          <!-- EMAIL -->
 
           <div class="form-field">
 
@@ -320,12 +357,15 @@
               type="email"
               autocomplete="email"
               placeholder="Your Email Address"
+              maxlength="150"
               required
             />
 
           </div>
 
 
+
+          <!-- PHONE -->
 
           <div class="form-field">
 
@@ -339,11 +379,42 @@
               type="tel"
               autocomplete="tel"
               placeholder="Your Phone Number"
+              maxlength="40"
             />
 
           </div>
 
 
+
+          <!--
+            SPAM PROTECTION
+
+            Real users never see this field.
+            Many automated spam bots fill it in.
+          -->
+
+          <div
+            class="website-field"
+            aria-hidden="true"
+          >
+
+            <label for="website">
+              Website
+            </label>
+
+            <input
+              id="website"
+              name="website"
+              type="text"
+              tabindex="-1"
+              autocomplete="off"
+            />
+
+          </div>
+
+
+
+          <!-- SUBMIT -->
 
           <button
             class="volunteer-button"
@@ -353,11 +424,13 @@
           </button>
 
 
+
           <p class="form-disclaimer">
             By submitting this form, you agree to be contacted by
-            the Arslan Ahmad campaign about volunteer opportunities
-            and campaign updates.
+            the Arslan Ahmad campaign regarding volunteer
+            opportunities and campaign information.
           </p>
+
 
 
           <p
@@ -374,6 +447,10 @@
   </main>
 
 
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
 
   <footer>
 
@@ -414,6 +491,7 @@
 
       </div>
 
+
       <a href="mailto:info@vote4arslan.ca">
         info@vote4arslan.ca
       </a>
@@ -429,7 +507,8 @@
   </footer>
 
 
-  <script src="script.js"></script>
+
+  <script src="script.js?v=20260821-2"></script>
 
 </body>
 

@@ -260,7 +260,7 @@
 
 
 /* =========================================================
-   VOLUNTEER FORM
+   VOLUNTEER PANEL
    ========================================================= */
 
 .volunteer-panel {
@@ -378,6 +378,12 @@
 }
 
 
+/*
+  Keep labels available for screen readers
+  while hiding them visually because the
+  placeholders already identify the fields.
+*/
+
 .form-field label {
   position: absolute;
 
@@ -450,7 +456,28 @@
 
 
 /* =========================================================
-   VOLUNTEER BUTTON
+   HONEYPOT SPAM FIELD
+   ========================================================= */
+
+.website-field {
+  position: absolute;
+
+  left: -9999px;
+  top: -9999px;
+
+  width: 1px;
+  height: 1px;
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   BUTTON
    ========================================================= */
 
 .volunteer-button {
@@ -495,6 +522,19 @@
 }
 
 
+.volunteer-button:disabled {
+  opacity: 0.65;
+
+  cursor: wait;
+
+  transform: none;
+}
+
+
+/* =========================================================
+   DISCLAIMER
+   ========================================================= */
+
 .form-disclaimer {
   max-width: 470px;
 
@@ -514,8 +554,12 @@
 }
 
 
+/* =========================================================
+   FORM RESPONSE MESSAGE
+   ========================================================= */
+
 .form-message {
-  min-height: 21px;
+  min-height: 24px;
 
   margin: 0;
 
@@ -525,7 +569,19 @@
 
   font-weight: 800;
 
+  line-height: 1.5;
+
   text-align: center;
+}
+
+
+.form-message.success {
+  color: #D8F3DC;
+}
+
+
+.form-message.error {
+  color: #FFD9DF;
 }
 
 
