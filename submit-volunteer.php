@@ -175,7 +175,7 @@ $phone = str_replace(
 // EMAIL SETTINGS
 // ============================================================
 
-$smtpHost = 'relay-hosting.secureserver.net';
+$smtpHost = 'localhost';
 
 $smtpPort = 25;
 
