@@ -1,0 +1,350 @@
+/* =========================================================
+   ELECTORAL AREA PAGE
+   ========================================================= */
+
+.electoral-page {
+  background: var(--off-white);
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.electoral-intro {
+  padding:
+    85px
+    max(8vw, 45px)
+    70px;
+
+  text-align: center;
+
+  background: var(--white);
+
+  border-bottom:
+    1px
+    solid
+    var(--line);
+}
+
+
+.electoral-intro .eyebrow {
+  margin-bottom: 12px;
+
+  font-size: 17px;
+}
+
+
+.electoral-intro h1 {
+  margin: 0;
+
+  color: var(--navy-deep);
+
+  font-size:
+    clamp(72px, 8vw, 118px);
+
+  font-weight: 900;
+
+  line-height: 0.82;
+}
+
+
+.electoral-intro h1 span {
+  display: block;
+
+  color: var(--red);
+}
+
+
+.electoral-lead {
+  max-width: 800px;
+
+  margin:
+    30px
+    auto
+    0;
+
+  color: var(--muted);
+
+  font-size: 19px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   COMMUNITY TAGS
+   ========================================================= */
+
+.electoral-tags {
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 28px;
+}
+
+
+.electoral-tags span {
+  padding:
+    9px
+    15px;
+
+  background: var(--navy-deep);
+
+  color: var(--white);
+
+  font-size: 12px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+  border-bottom:
+    3px
+    solid
+    var(--red);
+}
+
+
+/* =========================================================
+   MAP SECTION
+   ========================================================= */
+
+.map-section {
+  padding:
+    85px
+    max(7vw, 30px)
+    100px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #F4F7FA,
+      var(--off-white)
+    );
+}
+
+
+.map-heading {
+  width: min(850px, 100%);
+
+  margin:
+    0
+    auto
+    45px;
+
+  text-align: center;
+}
+
+
+.map-heading h2 {
+  margin: 0;
+
+  color: var(--navy-deep);
+
+  font-size:
+    clamp(55px, 6vw, 82px);
+
+  font-weight: 900;
+
+  line-height: 0.86;
+}
+
+
+.map-heading h2 span {
+  display: block;
+
+  color: var(--red);
+}
+
+
+/* =========================================================
+   MAP CARD
+   ========================================================= */
+
+.electoral-map-card {
+  width:
+    min(1050px, 100%);
+
+  margin: 0 auto;
+
+  padding: 15px;
+
+  background: var(--white);
+
+  border:
+    1px
+    solid
+    var(--line);
+
+  border-top:
+    8px
+    solid
+    var(--red);
+
+  box-shadow:
+    0
+    20px
+    45px
+    rgba(13, 53, 95, 0.12);
+}
+
+
+.electoral-map-card img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+}
+
+
+.electoral-map-card figcaption {
+  padding:
+    15px
+    8px
+    4px;
+
+  color: var(--muted);
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.electoral-cta {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 40px;
+
+  padding:
+    62px
+    max(8vw, 45px);
+
+  background: var(--navy-deep);
+
+  color: var(--white);
+
+  border-top:
+    6px
+    solid
+    var(--red);
+}
+
+
+.electoral-cta .eyebrow {
+  color: var(--red-soft);
+}
+
+
+.electoral-cta h2 {
+  margin: 0;
+
+  color: var(--white);
+
+  font-size:
+    clamp(44px, 5vw, 70px);
+
+  font-weight: 900;
+
+  line-height: 0.9;
+}
+
+
+.electoral-cta h2 span {
+  display: block;
+
+  color: var(--red-soft);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+  .electoral-cta {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .electoral-intro {
+    padding:
+      60px
+      22px
+      55px;
+  }
+
+
+  .electoral-intro h1 {
+    font-size: 62px;
+  }
+
+
+  .electoral-lead {
+    font-size: 17px;
+  }
+
+
+  .map-section {
+    padding:
+      65px
+      14px
+      75px;
+  }
+
+
+  .map-heading {
+    text-align: left;
+
+    padding:
+      0
+      8px;
+  }
+
+
+  .map-heading h2 {
+    font-size: 52px;
+  }
+
+
+  .electoral-map-card {
+    padding: 7px;
+  }
+
+
+  .electoral-cta {
+    padding:
+      50px
+      22px;
+  }
+
+}

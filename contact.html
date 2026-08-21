@@ -26,21 +26,17 @@
 
   <link
     rel="stylesheet"
-    href="styles.css?v=20260820-1"
+    href="styles.css?v=20260821-1"
   />
 
   <link
     rel="stylesheet"
-    href="contact.css?v=20260820-1"
+    href="contact.css?v=20260821-1"
   />
 </head>
 
 
 <body>
-
-  <!-- =========================
-       HEADER
-       ========================= -->
 
   <header class="site-header">
 
@@ -92,6 +88,10 @@
         About Me
       </a>
 
+      <a href="electoral-area.html">
+        Electoral Area
+      </a>
+
       <a
         class="nav-cta"
         href="contact.html"
@@ -114,9 +114,7 @@
     >
 
 
-      <!-- =========================
-           CONTACT INFORMATION
-           ========================= -->
+      <!-- CONTACT INFORMATION -->
 
       <div class="contact-copy">
 
@@ -144,8 +142,6 @@
 
         <div class="contact-details">
 
-
-          <!-- PHONE -->
 
           <a
             class="contact-detail"
@@ -175,8 +171,6 @@
 
 
 
-          <!-- EMAIL -->
-
           <a
             class="contact-detail"
             href="mailto:info@vote4arslan.ca"
@@ -205,8 +199,6 @@
 
 
 
-          <!-- WEBSITE -->
-
           <a
             class="contact-detail"
             href="https://vote4arslan.ca"
@@ -233,7 +225,6 @@
 
           </a>
 
-
         </div>
 
 
@@ -254,58 +245,119 @@
 
 
 
-      <!-- =========================
-           VOLUNTEER PANEL
-           ========================= -->
+      <!-- VOLUNTEER FORM -->
 
-      <div class="signup-panel">
+      <div class="volunteer-panel">
 
-        <p class="eyebrow">
+        <p class="volunteer-kicker">
           GET INVOLVED
         </p>
 
-
         <h2>
-
-          SIGN UP TO
-
-          <span>
-            VOLUNTEER.
-          </span>
-
+          JOIN THE
+          <span>CAMPAIGN</span>
         </h2>
 
 
         <p class="volunteer-intro">
-          Help connect with families, neighbours and communities
-          across Vaughan Ward 1 and King City.
+          Join the team and help us connect with families and
+          communities across King City and Vaughan Ward 1.
         </p>
 
 
         <form id="signup-form">
 
-          <label for="email">
-            Email address
-          </label>
+          <div class="name-row">
+
+            <div class="form-field">
+
+              <label for="first-name">
+                First name
+              </label>
+
+              <input
+                id="first-name"
+                name="firstName"
+                type="text"
+                autocomplete="given-name"
+                placeholder="First Name"
+                required
+              />
+
+            </div>
 
 
-          <input
-            id="email"
-            name="email"
-            type="email"
-            autocomplete="email"
-            placeholder="you@example.com"
-            required
-          />
+            <div class="form-field">
+
+              <label for="last-name">
+                Last name
+              </label>
+
+              <input
+                id="last-name"
+                name="lastName"
+                type="text"
+                autocomplete="family-name"
+                placeholder="Last Name"
+                required
+              />
+
+            </div>
+
+          </div>
+
+
+
+          <div class="form-field">
+
+            <label for="email">
+              Email address
+            </label>
+
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="Your Email Address"
+              required
+            />
+
+          </div>
+
+
+
+          <div class="form-field">
+
+            <label for="phone">
+              Phone number
+            </label>
+
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              autocomplete="tel"
+              placeholder="Your Phone Number"
+            />
+
+          </div>
+
 
 
           <button
-            class="button button-primary"
+            class="volunteer-button"
             type="submit"
           >
-            Sign up to volunteer
-            <span>→</span>
+            SIGN UP TO VOLUNTEER
           </button>
+
+
+          <p class="form-disclaimer">
+            By submitting this form, you agree to be contacted by
+            the Arslan Ahmad campaign about volunteer opportunities
+            and campaign updates.
+          </p>
 
 
           <p
@@ -322,10 +374,6 @@
   </main>
 
 
-
-  <!-- =========================
-       FOOTER
-       ========================= -->
 
   <footer>
 
@@ -346,10 +394,6 @@
         <strong>
           Arslan Ahmad
         </strong>
-
-        <small>
-          York Region School Trustee Candidate
-        </small>
 
       </span>
 

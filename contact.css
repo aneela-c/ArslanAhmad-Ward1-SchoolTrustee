@@ -8,32 +8,33 @@
 
 
 /* =========================================================
-   MAIN CONTACT LAYOUT
+   MAIN LAYOUT
    ========================================================= */
 
 .contact-hero {
   display: grid;
 
   grid-template-columns:
-    minmax(0, 1.05fr)
-    minmax(410px, 0.95fr);
+    minmax(0, 1fr)
+    minmax(430px, 0.9fr);
 
   align-items: center;
 
-  gap: 7vw;
+  gap: clamp(55px, 7vw, 110px);
 
-  min-height: 690px;
+  min-height: 720px;
 
   padding:
     85px
-    max(8vw, 45px);
+    max(7vw, 45px)
+    95px;
 
   background:
     linear-gradient(
-      150deg,
+      155deg,
       transparent 0%,
-      transparent 70%,
-      rgba(23, 74, 126, 0.035) 70%,
+      transparent 72%,
+      rgba(23, 74, 126, 0.035) 72%,
       rgba(23, 74, 126, 0.035) 100%
     ),
     var(--off-white);
@@ -45,18 +46,16 @@
    ========================================================= */
 
 .contact-copy {
-  max-width: 760px;
+  max-width: 730px;
 }
 
 
 .contact-copy .eyebrow {
-  font-size: 17px;
+  margin-bottom: 15px;
 
-  margin-bottom: 13px;
+  font-size: 17px;
 }
 
-
-/* Main heading */
 
 .contact-copy h1 {
   margin: 0;
@@ -64,7 +63,7 @@
   color: var(--navy-deep);
 
   font-size:
-    clamp(76px, 7.5vw, 115px);
+    clamp(76px, 7.5vw, 112px);
 
   font-weight: 900;
 
@@ -78,8 +77,6 @@
   color: var(--red);
 }
 
-
-/* Main supporting statement */
 
 .contact-intro {
   max-width: 620px;
@@ -111,8 +108,6 @@
   margin-top: 36px;
 }
 
-
-/* Whole clickable row */
 
 .contact-detail {
   display: flex;
@@ -161,8 +156,6 @@
 }
 
 
-/* Icon */
-
 .contact-icon {
   width: 48px;
   height: 48px;
@@ -179,7 +172,7 @@
 
   color: var(--white);
 
-  font-size: 24px;
+  font-size: 23px;
 
   font-weight: 900;
 }
@@ -190,8 +183,6 @@
   background: var(--red);
 }
 
-
-/* Text area */
 
 .contact-detail-copy {
   display: grid;
@@ -233,7 +224,7 @@
 
   gap: 4px;
 
-  margin-top: 36px;
+  margin-top: 34px;
 
   padding-top: 20px;
 
@@ -251,11 +242,11 @@
     'Barlow Condensed',
     sans-serif;
 
-  font-size: 24px;
+  font-size: 25px;
 
   font-weight: 900;
 
-  letter-spacing: 0.06em;
+  letter-spacing: 0.055em;
 
   text-transform: uppercase;
 }
@@ -269,78 +260,93 @@
 
 
 /* =========================================================
-   VOLUNTEER PANEL
+   VOLUNTEER FORM
    ========================================================= */
 
-.signup-panel {
+.volunteer-panel {
+  position: relative;
+
   padding:
-    49px
-    45px;
+    48px
+    46px
+    42px;
 
   background: var(--navy-deep);
 
   color: var(--white);
 
+  border-radius: 8px;
+
   border-top:
-    9px
+    8px
     solid
     var(--red);
 
   box-shadow:
-    15px
-    15px
+    14px
+    14px
     0
     rgba(200, 32, 52, 0.12);
 }
 
 
-.signup-panel .eyebrow {
+.volunteer-kicker {
+  margin:
+    0
+    0
+    7px;
+
   color: var(--red-soft);
 
-  font-size: 16px;
+  font-family:
+    'Barlow Condensed',
+    sans-serif;
+
+  font-size: 17px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
 }
 
 
-.signup-panel h2 {
+.volunteer-panel h2 {
   margin:
     0
-    30px
-    28px
-    0;
+    0
+    20px;
 
   color: var(--white);
 
   font-size:
-    clamp(61px, 6vw, 88px);
+    clamp(56px, 5vw, 76px);
 
   font-weight: 900;
 
-  line-height: 0.82;
+  line-height: 0.86;
 }
 
 
-.signup-panel h2 span {
+.volunteer-panel h2 span {
   display: block;
 
   color: var(--red-soft);
 }
 
 
-/* Volunteer description */
-
 .volunteer-intro {
-  max-width: 480px;
-
   margin:
     0
     0
-    30px;
+    27px;
 
   color: #DDE7F1;
 
-  font-size: 17px;
+  font-size: 16.5px;
 
-  line-height: 1.7;
+  line-height: 1.65;
 }
 
 
@@ -348,78 +354,178 @@
    FORM
    ========================================================= */
 
-.signup-panel form {
+.volunteer-panel form {
   display: grid;
 
-  gap: 13px;
+  gap: 17px;
 }
 
 
-.signup-panel label {
-  color: var(--white);
+.name-row {
+  display: grid;
 
-  font-size: 14px;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
 
-  font-weight: 800;
-
-  letter-spacing: 0.05em;
-
-  text-transform: uppercase;
+  gap: 14px;
 }
 
 
-.signup-panel input {
+.form-field {
+  display: grid;
+
+  gap: 7px;
+}
+
+
+.form-field label {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  padding: 0;
+  margin: -1px;
+
+  overflow: hidden;
+
+  clip: rect(0, 0, 0, 0);
+
+  white-space: nowrap;
+
+  border: 0;
+}
+
+
+.volunteer-panel input {
   width: 100%;
+
+  min-height: 60px;
 
   padding:
     15px
-    3px;
+    17px;
 
-  background: transparent;
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  color: var(--white);
+
+  border:
+    1px
+    solid
+    rgba(255, 255, 255, 0.25);
+
+  border-radius: 5px;
+
+  font-family:
+    'DM Sans',
+    sans-serif;
+
+  font-size: 16px;
+}
+
+
+.volunteer-panel input::placeholder {
+  color:
+    rgba(255, 255, 255, 0.58);
+}
+
+
+.volunteer-panel input:focus {
+  outline: none;
+
+  border-color: var(--red-soft);
+
+  background:
+    rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0
+    0
+    0
+    3px
+    rgba(243, 210, 216, 0.14);
+}
+
+
+/* =========================================================
+   VOLUNTEER BUTTON
+   ========================================================= */
+
+.volunteer-button {
+  width: 100%;
+
+  min-height: 64px;
+
+  margin-top: 3px;
+
+  padding:
+    16px
+    20px;
+
+  background: var(--red);
 
   color: var(--white);
 
   border: 0;
 
-  border-bottom:
+  border-radius: 5px;
+
+  font-family:
+    'Barlow Condensed',
+    sans-serif;
+
+  font-size: 25px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.07em;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
+
+
+.volunteer-button:hover {
+  background: var(--red-dark);
+
+  transform: translateY(-2px);
+}
+
+
+.form-disclaimer {
+  max-width: 470px;
+
+  margin:
     2px
-    solid
-    #7F9BB8;
+    auto
+    0;
 
-  font-size: 17px;
-}
+  color:
+    rgba(255, 255, 255, 0.57);
 
+  font-size: 12px;
 
-.signup-panel input::placeholder {
-  color: #C7D4E1;
-}
+  line-height: 1.55;
 
-
-.signup-panel input:focus {
-  border-bottom-color: var(--red-soft);
-}
-
-
-.signup-panel .button {
-  width: max-content;
-
-  margin-top: 13px;
+  text-align: center;
 }
 
 
 .form-message {
-  min-height: 24px;
+  min-height: 21px;
 
-  margin:
-    2px
-    0
-    0;
+  margin: 0;
 
   color: var(--red-soft);
 
   font-size: 14px;
 
   font-weight: 800;
+
+  text-align: center;
 }
 
 
@@ -427,7 +533,7 @@
    TABLET
    ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 950px) {
 
   .contact-hero {
     grid-template-columns: 1fr;
@@ -440,8 +546,8 @@
   }
 
 
-  .signup-panel {
-    max-width: 720px;
+  .volunteer-panel {
+    width: min(680px, 100%);
   }
 
 }
@@ -462,7 +568,7 @@
 
 
   .contact-copy h1 {
-    font-size: 66px;
+    font-size: 65px;
   }
 
 
@@ -473,16 +579,7 @@
 
   .contact-detail {
     padding:
-      14px
       14px;
-  }
-
-
-  .contact-icon {
-    width: 43px;
-    height: 43px;
-
-    font-size: 21px;
   }
 
 
@@ -493,20 +590,21 @@
   }
 
 
-  .signup-panel {
+  .volunteer-panel {
     padding:
-      38px
-      25px;
+      37px
+      24px
+      33px;
   }
 
 
-  .signup-panel h2 {
-    font-size: 58px;
+  .volunteer-panel h2 {
+    font-size: 57px;
   }
 
 
-  .signup-panel .button {
-    width: 100%;
+  .name-row {
+    grid-template-columns: 1fr;
   }
 
 }
