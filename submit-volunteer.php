@@ -2,39 +2,36 @@
 
 /*
 |--------------------------------------------------------------------------
-| Volunteer Form Handler
+| Volunteer Form - Direct SMTP Relay Test
 |--------------------------------------------------------------------------
 |
-| Receives volunteer information from contact.html
-| and sends it to info@vote4arslan.ca.
+| Sends volunteer submissions directly through:
+|
+| relay-hosting.secureserver.net
+| Port 25
+| No authentication
+| No SSL/TLS
 |
 */
 
 
-// Do not expose PHP errors to visitors.
-
 ini_set('display_errors', '0');
 
-
-// Always return JSON.
-
-header(
-    'Content-Type: application/json; charset=UTF-8'
-);
+header('Content-Type: application/json; charset=UTF-8');
 
 
 
 // ============================================================
-// ONLY ACCEPT POST REQUESTS
+// RESPONSE HELPER
 // ============================================================
 
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-
-    http_response_code(405);
+function respond($success, $message, $status = 200)
+{
+    http_response_code($status);
 
     echo json_encode([
-        'success' => false,
-        'message' => 'Invalid request.'
+        'success' => $success,
+        'message' => $message
     ]);
 
     exit;
@@ -43,37 +40,38 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 
 // ============================================================
-// SPAM PROTECTION
+// ONLY ACCEPT POST
 // ============================================================
 
-/*
-|--------------------------------------------------------------------------
-| Honeypot
-|--------------------------------------------------------------------------
-|
-| Normal visitors cannot see this field.
-| Many bots automatically fill every field.
-|
-*/
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
-$website =
-    trim($_POST['website'] ?? '');
+    respond(
+        false,
+        'Invalid request.',
+        405
+    );
+}
 
+
+
+// ============================================================
+// HONEYPOT SPAM CHECK
+// ============================================================
+
+$website = trim($_POST['website'] ?? '');
 
 if ($website !== '') {
 
     /*
-      Pretend the form worked.
-
-      This prevents bots from learning
-      that they triggered the filter.
+      Pretend submission worked so
+      automated bots do not learn that
+      they were blocked.
     */
 
-    echo json_encode([
-        'success' => true
-    ]);
-
-    exit;
+    respond(
+        true,
+        'Thank you for volunteering!'
+    );
 }
 
 
@@ -82,22 +80,15 @@ if ($website !== '') {
 // COLLECT FORM DATA
 // ============================================================
 
-$firstName =
-    trim($_POST['firstName'] ?? '');
-
-$lastName =
-    trim($_POST['lastName'] ?? '');
-
-$email =
-    trim($_POST['email'] ?? '');
-
-$phone =
-    trim($_POST['phone'] ?? '');
+$firstName = trim($_POST['firstName'] ?? '');
+$lastName  = trim($_POST['lastName'] ?? '');
+$email     = trim($_POST['email'] ?? '');
+$phone     = trim($_POST['phone'] ?? '');
 
 
 
 // ============================================================
-// REQUIRED FIELDS
+// REQUIRED FIELD VALIDATION
 // ============================================================
 
 if (
@@ -106,15 +97,11 @@ if (
     $email === ''
 ) {
 
-    http_response_code(400);
-
-    echo json_encode([
-        'success' => false,
-        'message' =>
-            'Please complete your name and email address.'
-    ]);
-
-    exit;
+    respond(
+        false,
+        'Please complete your name and email address.',
+        400
+    );
 }
 
 
@@ -130,15 +117,11 @@ if (
     strlen($phone) > 40
 ) {
 
-    http_response_code(400);
-
-    echo json_encode([
-        'success' => false,
-        'message' =>
-            'One or more fields are too long.'
-    ]);
-
-    exit;
+    respond(
+        false,
+        'One or more fields are too long.',
+        400
+    );
 }
 
 
@@ -147,69 +130,58 @@ if (
 // EMAIL VALIDATION
 // ============================================================
 
-if (
-    !filter_var(
-        $email,
-        FILTER_VALIDATE_EMAIL
-    )
-) {
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
-    http_response_code(400);
-
-    echo json_encode([
-        'success' => false,
-        'message' =>
-            'Please enter a valid email address.'
-    ]);
-
-    exit;
+    respond(
+        false,
+        'Please enter a valid email address.',
+        400
+    );
 }
 
 
 
 // ============================================================
-// PREVENT EMAIL HEADER INJECTION
+// REMOVE CR/LF TO PREVENT HEADER INJECTION
 // ============================================================
 
-$firstName =
-    str_replace(
-        ["\r", "\n"],
-        '',
-        $firstName
-    );
+$firstName = str_replace(
+    ["\r", "\n"],
+    '',
+    $firstName
+);
 
+$lastName = str_replace(
+    ["\r", "\n"],
+    '',
+    $lastName
+);
 
-$lastName =
-    str_replace(
-        ["\r", "\n"],
-        '',
-        $lastName
-    );
+$email = str_replace(
+    ["\r", "\n"],
+    '',
+    $email
+);
 
-
-$email =
-    str_replace(
-        ["\r", "\n"],
-        '',
-        $email
-    );
-
-
-$phone =
-    str_replace(
-        ["\r", "\n"],
-        '',
-        $phone
-    );
+$phone = str_replace(
+    ["\r", "\n"],
+    '',
+    $phone
+);
 
 
 
 // ============================================================
-// DESTINATION EMAIL
+// EMAIL SETTINGS
 // ============================================================
 
-$to =
-    'info@vote4arslan.ca';
+$smtpHost = 'relay-hosting.secureserver.net';
+
+$smtpPort = 25;
+
+$fromEmail = 'info@vote4arslan.ca';
+
+$toEmail = 'info@vote4arslan.ca';
 
 
 
@@ -226,43 +198,40 @@ $subject =
 
 
 // ============================================================
-// EMAIL MESSAGE
+// MESSAGE BODY
 // ============================================================
 
-$body =
-    "NEW VOLUNTEER SIGNUP\n";
+$body = '';
+
+$body .= "NEW VOLUNTEER SIGNUP\r\n";
+
+$body .= "============================\r\n\r\n";
 
 $body .=
-    "============================\n\n";
+    "A new volunteer has signed up through vote4arslan.ca.\r\n\r\n";
 
 
-$body .=
-    "A new volunteer has signed up through vote4arslan.ca.\n\n";
+$body .= "VOLUNTEER INFORMATION\r\n";
 
-
-$body .=
-    "VOLUNTEER INFORMATION\n";
-
-$body .=
-    "----------------------------\n";
+$body .= "----------------------------\r\n";
 
 
 $body .=
     "First Name: " .
     $firstName .
-    "\n";
+    "\r\n";
 
 
 $body .=
     "Last Name: " .
     $lastName .
-    "\n";
+    "\r\n";
 
 
 $body .=
     "Email: " .
     $email .
-    "\n";
+    "\r\n";
 
 
 $body .=
@@ -272,109 +241,401 @@ $body .=
         ? $phone
         : 'Not provided'
     ) .
-    "\n\n";
+    "\r\n\r\n";
 
 
 $body .=
-    "----------------------------\n";
+    "----------------------------\r\n";
+
 
 $body .=
-    "Submitted through the volunteer form at vote4arslan.ca.\n";
+    "Submitted through the volunteer form at vote4arslan.ca.\r\n";
 
 
 
 // ============================================================
-// EMAIL HEADERS
+// SMTP HELPER: READ SERVER RESPONSE
 // ============================================================
 
-/*
-|--------------------------------------------------------------------------
-| IMPORTANT
-|--------------------------------------------------------------------------
-|
-| The From address uses vote4arslan.ca.
-|
-| The volunteer's email is placed in Reply-To.
-|
-| That means when the campaign clicks Reply,
-| the response goes directly to the volunteer.
-|
-*/
+function smtpRead($socket)
+{
+    $response = '';
 
-$headers = [];
+    while (($line = fgets($socket, 515)) !== false) {
 
+        $response .= $line;
 
-$headers[] =
-    'From: Vote4Arslan Website <info@vote4arslan.ca>';
+        /*
+          SMTP multiline responses use:
 
+          250-First line
+          250-Second line
+          250 Final line
 
-$headers[] =
-    'Reply-To: ' .
-    $firstName .
-    ' ' .
-    $lastName .
-    ' <' .
-    $email .
-    '>';
+          When character 4 is a space,
+          the response is complete.
+        */
 
+        if (
+            strlen($line) >= 4 &&
+            $line[3] === ' '
+        ) {
+            break;
+        }
+    }
 
-$headers[] =
-    'MIME-Version: 1.0';
-
-
-$headers[] =
-    'Content-Type: text/plain; charset=UTF-8';
-
-
-
-// ============================================================
-// SEND EMAIL
-// ============================================================
-
-$sent =
-    mail(
-        $to,
-        $subject,
-        $body,
-        implode(
-            "\r\n",
-            $headers
-        )
-    );
-
-
-
-// ============================================================
-// RESPONSE
-// ============================================================
-
-if ($sent) {
-
-    echo json_encode([
-        'success' => true,
-        'message' =>
-            'Thank you for volunteering!'
-    ]);
-
-    exit;
-
+    return $response;
 }
 
 
 
 // ============================================================
-// EMAIL FAILED
+// SMTP HELPER: SEND COMMAND
 // ============================================================
 
-http_response_code(500);
+function smtpCommand(
+    $socket,
+    $command,
+    $expectedCodes
+) {
+
+    fwrite(
+        $socket,
+        $command . "\r\n"
+    );
 
 
-echo json_encode([
-    'success' => false,
-    'message' =>
-        'We could not send your submission. Please try again or email info@vote4arslan.ca.'
-]);
+    $response = smtpRead($socket);
 
 
-exit;
+    $code = intval(
+        substr(
+            trim($response),
+            0,
+            3
+        )
+    );
+
+
+    if (!in_array($code, $expectedCodes, true)) {
+
+        throw new Exception(
+            'SMTP error: ' .
+            trim($response)
+        );
+    }
+
+
+    return $response;
+}
+
+
+
+// ============================================================
+// CONNECT TO SMTP RELAY
+// ============================================================
+
+$errno = 0;
+
+$errstr = '';
+
+
+$socket = @fsockopen(
+    $smtpHost,
+    $smtpPort,
+    $errno,
+    $errstr,
+    15
+);
+
+
+if (!$socket) {
+
+    respond(
+        false,
+        'Unable to connect to the email server. Please try again later.',
+        500
+    );
+}
+
+
+
+// ============================================================
+// SET CONNECTION TIMEOUT
+// ============================================================
+
+stream_set_timeout(
+    $socket,
+    15
+);
+
+
+
+// ============================================================
+// SMTP CONVERSATION
+// ============================================================
+
+try {
+
+
+    // --------------------------------------------------------
+    // SERVER GREETING
+    // --------------------------------------------------------
+
+    $greeting = smtpRead($socket);
+
+    $greetingCode = intval(
+        substr(
+            trim($greeting),
+            0,
+            3
+        )
+    );
+
+
+    if ($greetingCode !== 220) {
+
+        throw new Exception(
+            'SMTP connection rejected: ' .
+            trim($greeting)
+        );
+    }
+
+
+
+    // --------------------------------------------------------
+    // EHLO
+    // --------------------------------------------------------
+
+    smtpCommand(
+        $socket,
+        'EHLO vote4arslan.ca',
+        [250]
+    );
+
+
+
+    // --------------------------------------------------------
+    // ENVELOPE SENDER
+    // --------------------------------------------------------
+
+    smtpCommand(
+        $socket,
+        'MAIL FROM:<' . $fromEmail . '>',
+        [250]
+    );
+
+
+
+    // --------------------------------------------------------
+    // RECIPIENT
+    // --------------------------------------------------------
+
+    smtpCommand(
+        $socket,
+        'RCPT TO:<' . $toEmail . '>',
+        [250, 251]
+    );
+
+
+
+    // --------------------------------------------------------
+    // BEGIN EMAIL DATA
+    // --------------------------------------------------------
+
+    smtpCommand(
+        $socket,
+        'DATA',
+        [354]
+    );
+
+
+
+    // ========================================================
+    // EMAIL HEADERS
+    // ========================================================
+
+    $headers = '';
+
+    $headers .=
+        'From: Vote4Arslan Website <' .
+        $fromEmail .
+        ">\r\n";
+
+
+    $headers .=
+        'To: ' .
+        $toEmail .
+        "\r\n";
+
+
+    $headers .=
+        'Reply-To: ' .
+        $firstName .
+        ' ' .
+        $lastName .
+        ' <' .
+        $email .
+        ">\r\n";
+
+
+    $headers .=
+        'Subject: ' .
+        $subject .
+        "\r\n";
+
+
+    $headers .=
+        'Date: ' .
+        date(DATE_RFC2822) .
+        "\r\n";
+
+
+    $headers .=
+        'Message-ID: <' .
+        uniqid('', true) .
+        '@vote4arslan.ca>' .
+        "\r\n";
+
+
+    $headers .=
+        "MIME-Version: 1.0\r\n";
+
+
+    $headers .=
+        "Content-Type: text/plain; charset=UTF-8\r\n";
+
+
+    $headers .=
+        "Content-Transfer-Encoding: 8bit\r\n";
+
+
+    /*
+      Blank line separates email headers
+      from the body.
+    */
+
+    $message =
+        $headers .
+        "\r\n" .
+        $body;
+
+
+
+    // ========================================================
+    // SMTP DOT-STUFFING
+    // ========================================================
+
+    /*
+      SMTP considers a line containing only
+      "." to be the end of the email.
+
+      Dot-stuffing protects body lines that
+      begin with a period.
+    */
+
+    $message = preg_replace(
+        '/^\./m',
+        '..',
+        $message
+    );
+
+
+
+    // ========================================================
+    // SEND MESSAGE
+    // ========================================================
+
+    fwrite(
+        $socket,
+        $message .
+        "\r\n.\r\n"
+    );
+
+
+    $sendResponse =
+        smtpRead($socket);
+
+
+    $sendCode = intval(
+        substr(
+            trim($sendResponse),
+            0,
+            3
+        )
+    );
+
+
+    if (
+        $sendCode !== 250 &&
+        $sendCode !== 251
+    ) {
+
+        throw new Exception(
+            'SMTP delivery failed: ' .
+            trim($sendResponse)
+        );
+    }
+
+
+
+    // --------------------------------------------------------
+    // QUIT
+    // --------------------------------------------------------
+
+    fwrite(
+        $socket,
+        "QUIT\r\n"
+    );
+
+
+    fclose($socket);
+
+
+
+    // ========================================================
+    // SUCCESS
+    // ========================================================
+
+    respond(
+        true,
+        'Thank you for volunteering! We’ll be in touch soon.'
+    );
+
+
+} catch (Exception $exception) {
+
+
+    if (is_resource($socket)) {
+
+        fwrite(
+            $socket,
+            "QUIT\r\n"
+        );
+
+        fclose($socket);
+    }
+
+
+    /*
+      We deliberately don't send the raw
+      SMTP error to the visitor.
+
+      Server details should not be exposed
+      publicly.
+    */
+
+    error_log(
+        'Volunteer SMTP error: ' .
+        $exception->getMessage()
+    );
+
+
+    respond(
+        false,
+        'We could not send your submission. Please try again or email info@vote4arslan.ca.',
+        500
+    );
+
+}
 ?>
